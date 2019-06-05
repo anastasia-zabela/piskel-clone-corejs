@@ -1,6 +1,8 @@
 class Storage {
   constructor() {
     this.currentTool = null;
+    this.primaryColor = null;
+    this.secondaryColor = null;
   }
 }
 

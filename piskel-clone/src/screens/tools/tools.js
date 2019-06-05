@@ -5,6 +5,7 @@ class Tools {
     this.tools = document.querySelector('.tools');
     this.pen = document.querySelector('.tools__pen-tool');
     this.paintBucket = document.querySelector('.tools__paint-bucket-tool');
+    this.colorPicker = document.querySelector('.tools__color-picker-tool');
     this.eraser = document.querySelector('.tools__eraser-tool');
     this.currentTool = null;
   }
@@ -27,6 +28,11 @@ function chooseTools(event) {
           storage.currentTool = 'paintBucket';
           tools.currentTool = tools.paintBucket;
           tools.paintBucket.style.background = '#eee';
+          break;
+        case tools.colorPicker:
+          storage.currentTool = 'colorPicker';
+          tools.currentTool = tools.colorPicker;
+          tools.colorPicker.style.background = '#eee';
           break;
         case tools.eraser:
           storage.currentTool = 'eraser';
