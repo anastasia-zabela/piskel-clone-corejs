@@ -8,8 +8,8 @@ function getCurrentColor(event) {
   let { target } = event;
   while (target !== predefinedColors && storage.currentTool === 'colorPicker') {
     if (target.tagName === 'BUTTON') {
-      storage.primaryColor = getComputedStyle(target).backgroundColor;
-      primaryColorField.style.backgroundColor = storage.primaryColor;
+      storage.colors.primaryColor = getComputedStyle(target).backgroundColor;
+      primaryColorField.style.backgroundColor = storage.colors.primaryColor;
       localStorage.setItem('storage', JSON.stringify(storage));
     }
     target = target.parentNode;
