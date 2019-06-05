@@ -1,3 +1,1 @@
-import bg from './screens/preview/index';
-
-bg();
+import './index.scss';

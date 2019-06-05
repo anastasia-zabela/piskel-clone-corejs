@@ -1,0 +1,13 @@
+.tools {
+    width: 50px;
+    margin: auto 0;
+    border: 1px solid #eee;
+
+    & button {
+        height: 50px;
+        width: 50px;
+        font-size: 25px;
+        border: 1px solid #eee;
+        background: #fff; 
+    }
+}

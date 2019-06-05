@@ -1,6 +1,3 @@
-function bg() {
-  const button = document.querySelector('button');
-  button.style.background = '#999';
-}
+import CreateSpriteButton from '../../components/preview__button-create-sprite/index';
 
-export default bg;
+export default CreateSpriteButton;
