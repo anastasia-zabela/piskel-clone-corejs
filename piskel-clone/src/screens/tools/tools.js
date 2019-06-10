@@ -7,6 +7,7 @@ class Tools {
     this.paintBucket = document.querySelector('.tools__paint-bucket-tool');
     this.colorPicker = document.querySelector('.tools__color-picker-tool');
     this.eraser = document.querySelector('.tools__eraser-tool');
+    this.line = document.querySelector('.tools__line-tool');
     this.currentTool = null;
   }
 }
@@ -38,6 +39,11 @@ function chooseTools(event) {
           storage.currentTool = 'eraser';
           tools.currentTool = tools.eraser;
           tools.eraser.style.background = '#eee';
+          break;
+        case tools.line:
+          storage.currentTool = 'line';
+          tools.currentTool = tools.line;
+          tools.line.style.background = '#eee';
           break;
         default:
           break;
