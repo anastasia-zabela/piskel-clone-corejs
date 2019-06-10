@@ -24,8 +24,10 @@ function createCanvas(sizeCanvas) {
   canvas.height = canvas.width;
   storage.canvas.canvasElement = canvas;
   storage.canvas.sizeRect = size.sizeRect;
+  storage.canvas.sizeCanvas = sizeCanvas;
   addEventsOnCanvas(canvas);
   storage.wrapper.replaceChild(canvas, oldCanvas);
+  return canvas;
 }
 
 export default createCanvas;

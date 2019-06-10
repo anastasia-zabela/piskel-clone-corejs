@@ -1,4 +1,5 @@
 import storage from '../../components/storage';
+import setFramesData from '../../components/set-frames-data';
 
 let draw = false;
 let x = null;
@@ -24,7 +25,9 @@ function drawLine(h, v) {
 
 function drawPixel(e) {
   const { canvasElement, sizeRect } = storage.canvas;
+  const { currentFrame } = storage.frame;
   const ctx = canvasElement.getContext('2d');
+  const ctxFrame = currentFrame.children[0].getContext('2d');
   if (storage.currentTool === 'pen') {
     if (draw) {
       for (let h = 0; h < canvasElement.width; h += sizeRect) {
@@ -32,17 +35,14 @@ function drawPixel(e) {
           if (h + sizeRect > e.offsetX && h <= e.offsetX
           && v + sizeRect > e.offsetY && v <= e.offsetY) {
             ctx.fillStyle = storage.colors.primaryColor;
-            window.console.log('x:', h / 25, ', y:', v / 25);
+            // window.console.log('x:', h / 25, ', y:', v / 25);
             // drawLine(h, v);
             x = h / sizeRect;
             y = v / sizeRect;
-            ctx.lineTo(e.offsetX, e.offsetY);
-            ctx.stroke();
 
             ctx.fillRect(h, v, sizeRect, sizeRect);
-
-            ctx.beginPath();
-            ctx.moveTo(e.offsetX, e.offsetY);
+            ctxFrame.drawImage(canvasElement, 0, 0, 150, 150);
+            setFramesData(h, v);
 
             localStorage.setItem('storage', JSON.stringify(storage));
           }
@@ -64,11 +64,8 @@ function handleMouseMove(e) {
 
 function handleMouseUp() {
   draw = false;
-  const { canvasElement } = storage.canvas;
-  const ctx = canvasElement.getContext('2d');
   x = null;
   y = null;
-  ctx.beginPath();
 }
 
 function addPenTool(canvas) {
