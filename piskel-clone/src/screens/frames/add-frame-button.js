@@ -2,6 +2,7 @@ import storage from '../../components/storage';
 import Frame from './frames';
 import createCanvas from '../canvas/canvas';
 import addNewFrame from '../../components/create-new-frame';
+import createPreviewAnimation from '../preview/preview-animation';
 
 const addFrameButton = document.querySelector('.frames-contain__frame-add');
 
@@ -12,7 +13,7 @@ function createFrame() {
   createCanvas(storage.canvas.sizeCanvas);
   addNewFrame(newFrame.frameContain);
   addFrameButton.insertAdjacentElement('beforebegin', newFrame.frameContain);
-  // createPreviewAnimation(currentFps);
+  createPreviewAnimation(storage.currentFps);
 }
 
 function handleAddFrameButton() {

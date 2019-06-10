@@ -1,5 +1,6 @@
 function changeNum(e, i) {
   e.children[1].innerHTML = i + 1;
+  e.setAttribute('data-num-frame', i);
 }
 
 function changeNumOfFrames() {

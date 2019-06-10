@@ -1,8 +1,10 @@
 import storage from '../../components/storage';
 import createCanvas from '../canvas/canvas';
+// eslint-disable-next-line import/no-cycle
 import addNewFrame from '../../components/create-new-frame';
 import drawCanvas from '../../components/draw-canvas';
 import changeNumOfFrames from '../../components/change-num-of-frames';
+import createPreviewAnimation from '../preview/preview-animation';
 
 function copyFrame(e) {
   let { target } = e;
@@ -32,7 +34,7 @@ function copyFrame(e) {
 
   target.insertAdjacentElement('afterend', newFrame);
   changeNumOfFrames();
-  // createPreviewAnimation(currentFps);
+  createPreviewAnimation(storage.currentFps);
 }
 
 function handleCopyFrameTool() {

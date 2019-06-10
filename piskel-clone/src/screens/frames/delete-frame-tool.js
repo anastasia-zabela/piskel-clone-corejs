@@ -2,6 +2,7 @@ import storage from '../../components/storage';
 import createCanvas from '../canvas/canvas';
 import drawCanvas from '../../components/draw-canvas';
 import changeNumOfFrames from '../../components/change-num-of-frames';
+import createPreviewAnimation from '../preview/preview-animation';
 
 function deleteFrame(e) {
   let { target } = e;
@@ -10,7 +11,7 @@ function deleteFrame(e) {
   } while (target.tagName !== 'DIV');
 
   let currentNum = target.getAttribute('data-num-frame');
-  delete storage.framesData[currentNum];
+  storage.framesData.splice(currentNum, currentNum);
 
   if (target === storage.frame.currentFrame) {
     storage.frame.currentFrame = target.previousElementSibling;
@@ -23,9 +24,10 @@ function deleteFrame(e) {
   } else {
     target.parentNode.removeChild(target);
   }
-
+  storage.frame.countOfFrame -= 1;
+  storage.frame.countOfDataFrame -= 1;
   changeNumOfFrames();
-//   createPreviewAnimation(currentFps);
+  createPreviewAnimation(storage.currentFps);
 }
 
 function handleDeleteFrameTool() {

@@ -13,12 +13,13 @@ class Storage {
     };
     this.frame = {
       countOfFrame: 1,
-      countOfDataFrame: 1,
+      countOfDataFrame: 0,
       currentFrame: document.querySelector('.frames-contain__wrapper-frame'),
     };
-    this.framesData = {
-      1: new Array(this.canvas.sizeCanvas * this.canvas.sizeCanvas).fill(null),
-    };
+    this.framesData = [
+      new Array(this.canvas.sizeCanvas * this.canvas.sizeCanvas).fill(null),
+    ];
+    this.currentFps = '1';
   }
 }
 
