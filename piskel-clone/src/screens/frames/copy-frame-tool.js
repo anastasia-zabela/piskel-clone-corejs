@@ -37,8 +37,4 @@ function copyFrame(e) {
   createPreviewAnimation(storage.currentFps);
 }
 
-function handleCopyFrameTool() {
-  storage.frame.currentFrame.children[4].addEventListener('click', copyFrame);
-}
-
-export default handleCopyFrameTool;
+export default copyFrame;

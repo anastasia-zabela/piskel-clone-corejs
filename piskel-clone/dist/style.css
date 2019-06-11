@@ -1,3 +1,172 @@
+.tools {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100px;
+  margin: auto 0; }
+  .tools button {
+    height: 50px;
+    width: 50px;
+    font-size: 25px;
+    border: 1px solid #eee;
+    background: #fff; }
+
+.colors {
+  grid-area: 2 / 1 / 3 / 2;
+  width: 50px;
+  margin: auto 0;
+  border: 1px solid #eee; }
+  .colors div {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #d2cfcf; }
+
+.predefined-colors {
+  grid-area: 3 / 1 / 4 / 2;
+  width: 50px;
+  margin: auto 0;
+  border: 1px solid #eee; }
+  .predefined-colors button {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #d2cfcf; }
+  .predefined-colors__color-blue {
+    background: #4891cc; }
+  .predefined-colors__color-red {
+    background: #cf4b42; }
+  .predefined-colors__color-green {
+    background: #48cc5e; }
+  .predefined-colors__color-yellow {
+    background: #d6c359; }
+  .predefined-colors__color-orange {
+    background: #cc9348; }
+
+.frames-contain__tool--delete-tool, .frames-contain__tool--move-tool, .frames-contain__tool--copy-tool {
+  position: absolute;
+  display: none;
+  width: 30px;
+  height: 30px;
+  background: #999;
+  border: none;
+  color: #fff;
+  font-size: 20px; }
+
+.frames-contain__tool--delete-tool:hover, .frames-contain__tool--move-tool:hover, .frames-contain__tool--copy-tool:hover {
+  background: #47a16f;
+  cursor: pointer; }
+
+.frames-contain {
+  grid-area: 1 / 2 / 4 / 3;
+  display: flex;
+  justify-content: center; }
+  .frames-contain__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    overflow-y: scroll;
+    border: 2px solid #eee;
+    border-top: none; }
+  .frames-contain__wrapper-frame {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 25px; }
+  .frames-contain__frame {
+    background: #eee; }
+  .frames-contain__number {
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background: #47a16f;
+    color: #fff;
+    border: none; }
+  .frames-contain__tool--delete-tool {
+    top: 0;
+    right: 0; }
+  .frames-contain__tool--move-tool {
+    bottom: 0; }
+  .frames-contain__tool--copy-tool {
+    bottom: 0;
+    right: 0; }
+  .frames-contain__frame-add {
+    width: 50px;
+    min-height: 50px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: white;
+    background: #999999;
+    border: none;
+    border-radius: 25px; }
+
+.selected {
+  border: 4px solid #47a16f; }
+
+.visible {
+  display: inline-block; }
+
+.canvas {
+  grid-area: 1 / 3 / 4 / 4;
+  margin: auto;
+  background: #eee; }
+
+.preview-contain {
+  display: flex;
+  justify-content: center;
+  width: 440px; }
+  .preview-contain__preview {
+    width: 350px;
+    height: 350px;
+    background: #eee;
+    image-rendering: pixelated; }
+  .preview-contain__preview:-webkit-fullscreen {
+    height: 100%;
+    width: auto;
+    image-rendering: pixelated; }
+  .preview-contain__fps-block {
+    display: grid;
+    grid-template-columns: 70px 30px 1fr;
+    width: 350px;
+    height: 50px;
+    background: #999; }
+    .preview-contain__fps-block span {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    .preview-contain__fps-block--fps-slider {
+      width: 90%;
+      margin: auto; }
+  .preview-contain__fullscreen {
+    width: 100px;
+    height: 30px;
+    margin: 10px auto;
+    background: #47a16f;
+    border: 0;
+    color: white;
+    border-radius: 8px; }
+
+.canvas-size {
+  grid-area: 4 / 3 / 5 / 4;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 130px;
+  margin: 0 auto; }
+  .canvas-size button {
+    height: 35px;
+    width: 35px;
+    background: #fff;
+    border: 2px solid #47a16f;
+    border-radius: 25px; }
+  .canvas-size button:hover {
+    background: #47a16f;
+    color: #fff;
+    cursor: pointer; }
+  .canvas-size .selected {
+    background: #47a16f;
+    color: #fff; }
+
 body {
   height: 100vh;
   margin: 0;
@@ -6,10 +175,13 @@ body {
 
 .wrapper {
   display: grid;
-  grid-template: repeat(2, 1fr)/50px 1fr 800px 1fr;
-  padding: 80px 100px;
-  height: 100%;
-  box-sizing: border-box; }
+  grid-template: 200px 1fr 1fr 50px / 50px 1fr 800px 1fr;
+  padding: 30px 100px;
+  height: 850px; }
+
+header {
+  height: 50px;
+  background: #999; }
 
 button {
   margin: 0;

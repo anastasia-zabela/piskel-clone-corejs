@@ -2,7 +2,8 @@ import storage from './storage';
 import createCanvas from '../screens/canvas/canvas';
 import drawCanvas from './draw-canvas';
 
-function selectFrame(e) {
+function selectFrame(event) {
+  const e = event;
   if (e.target.tagName === 'CANVAS') {
     storage.frame.currentFrame.classList.remove('selected');
     this.classList.add('selected');
@@ -14,8 +15,4 @@ function selectFrame(e) {
   }
 }
 
-function handleSelectFrame() {
-  storage.frame.currentFrame.addEventListener('click', selectFrame);
-}
-
-export default handleSelectFrame;
+export default selectFrame;

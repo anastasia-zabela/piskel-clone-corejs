@@ -1,9 +1,6 @@
 import storage from './storage';
-import hoverFrameTools from './hover-frame-tools';
-import handleDeleteFrameTool from '../screens/frames/handle-delete-frame-tool';
-import handleSelectFrame from './select-frames';
 // eslint-disable-next-line import/no-cycle
-import handleCopyFrameTool from '../screens/frames/copy-frame-tool';
+import handleFrameTool from '../screens/frames/handle-frame-tool';
 
 function addNewFrame(frame) {
   storage.framesData[storage.frame.countOfDataFrame] = new Array(storage.canvas.sizeCanvas
@@ -14,10 +11,7 @@ function addNewFrame(frame) {
   storage.frame.currentFrame.classList.remove('selected');
   storage.frame.currentFrame = newFrame;
   storage.frame.currentFrame.classList.add('selected');
-  hoverFrameTools();
-  handleCopyFrameTool();
-  handleDeleteFrameTool();
-  handleSelectFrame();
+  handleFrameTool(storage.frame.currentFrame);
 }
 
 export default addNewFrame;

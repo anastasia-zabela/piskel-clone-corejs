@@ -27,7 +27,6 @@ function createCanvas(sizeCanvas) {
   storage.canvas.sizeCanvas = sizeCanvas;
   addEventsOnCanvas(canvas);
   storage.wrapper.replaceChild(canvas, oldCanvas);
-  return canvas;
 }
 
 export default createCanvas;
