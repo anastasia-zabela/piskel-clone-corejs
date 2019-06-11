@@ -3,6 +3,7 @@
 @import './screens/frames/frames.scss';
 @import './screens/canvas/canvas.scss';
 @import './screens/preview/preview.scss';
+@import './screens/canvas/canvas-size-button.scss';
 
 body {
     height: 100vh;
@@ -13,10 +14,14 @@ body {
 
 .wrapper {
     display: grid;
-    grid-template: 200px 1fr 1fr / 50px 1fr 800px 1fr;
-    padding: 80px 100px;
-    height: 100%;
-    box-sizing: border-box;
+    grid-template: 200px 1fr 1fr 50px / 50px 1fr 800px 1fr;
+    padding: 30px 100px;
+    height: 850px;
+}
+
+header {
+    height: 50px;
+    background: #999;
 }
 
 button {

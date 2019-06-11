@@ -30,8 +30,4 @@ function deleteFrame(e) {
   createPreviewAnimation(storage.currentFps);
 }
 
-function handleDeleteFrameTool() {
-  storage.frame.currentFrame.children[2].addEventListener('click', deleteFrame);
-}
-
-export default handleDeleteFrameTool;
+export default deleteFrame;

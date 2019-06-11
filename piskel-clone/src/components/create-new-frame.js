@@ -1,6 +1,6 @@
 import storage from './storage';
 import hoverFrameTools from './hover-frame-tools';
-import handleDeleteFrameTool from '../screens/frames/delete-frame-tool';
+import handleDeleteFrameTool from '../screens/frames/handle-delete-frame-tool';
 import handleSelectFrame from './select-frames';
 // eslint-disable-next-line import/no-cycle
 import handleCopyFrameTool from '../screens/frames/copy-frame-tool';

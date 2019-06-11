@@ -7,4 +7,6 @@
 | Jun 5 | Jun 5 | 3h | add pen tool |
 | Jun 9 | Jun 9 | 2h | button for adding frame |
 | Jun 10 | Jun 10 | 3h | copy-frame and delete-frame tools |
-10.06 17:30
+| Jun 10 | Jun 10 | 1h | create preview animation |
+| Jun 10 | Jun 10 | 30min | fullscreen mode |
+11.06 13:00
