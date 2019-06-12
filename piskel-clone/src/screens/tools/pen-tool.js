@@ -1,7 +1,7 @@
 import storage from '../../components/storage';
 import setFramesData from '../../components/set-frames-data';
 
-let draw = false;
+let drawPen = false;
 let x = null;
 let y = null;
 
@@ -29,7 +29,7 @@ function drawPixel(e) {
   const ctx = canvasElement.getContext('2d');
   const ctxFrame = currentFrame.children[0].getContext('2d');
   if (storage.currentTool === 'pen') {
-    if (draw) {
+    if (drawPen) {
       for (let h = 0; h < canvasElement.width; h += sizeRect) {
         for (let v = 0; v < canvasElement.height; v += sizeRect) {
           if (h + sizeRect > e.offsetX && h <= e.offsetX
@@ -53,7 +53,9 @@ function drawPixel(e) {
 }
 
 function handleMouseDown(e) {
-  draw = true;
+  if (storage.currentTool === 'pen') {
+    drawPen = true;
+  }
   drawPixel(e);
 }
 
@@ -63,7 +65,7 @@ function handleMouseMove(e) {
 }
 
 function handleMouseUp() {
-  draw = false;
+  drawPen = false;
   x = null;
   y = null;
 }

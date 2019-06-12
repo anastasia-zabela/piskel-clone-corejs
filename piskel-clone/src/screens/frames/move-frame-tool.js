@@ -95,7 +95,6 @@ function handleDragEnd() {
     }
     return elem;
   });
-
   changeNumOfFrames();
 }
 

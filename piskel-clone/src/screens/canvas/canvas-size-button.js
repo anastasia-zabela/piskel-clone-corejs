@@ -25,14 +25,15 @@ function deleteOldFrame(size) {
 }
 
 function changeCanvasSize(e) {
-  const { target } = e;
-  const size = +target.textContent;
-  const oldSize = document.querySelector('.canvas-size .selected');
-  oldSize.classList.remove('selected');
-  target.classList.add('selected');
-  deleteOldFrame(size);
-  createCanvas(size);
-  window.console.log(storage.framesData);
+  if (e.target.tagName === 'BUTTON') {
+    const { target } = e;
+    const size = +target.textContent;
+    const oldSize = document.querySelector('.canvas-size .selected');
+    oldSize.classList.remove('selected');
+    target.classList.add('selected');
+    deleteOldFrame(size);
+    createCanvas(size);
+  }
 }
 
 function handleCanvasSizeButton() {

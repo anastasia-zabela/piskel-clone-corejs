@@ -1,5 +1,23 @@
-.canvas {
+.canvas-contain {
+    position: relative;
     grid-area: 1 / 3 / 4 / 4;
     margin: auto;
-    background: #eee;
+    width: 800px;
+    height: 800px;
+
+    &__drawing-canvas {
+        z-index: 10;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #eee;
+    }
+
+    &__secondary-canvas {
+        z-index: 5;
+        position: absolute;
+        top: 0;
+        left: 0;
+        // border: 1px black solid;
+    }
 }

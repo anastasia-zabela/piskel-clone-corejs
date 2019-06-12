@@ -1,13 +1,14 @@
 class Storage {
   constructor() {
-    this.wrapper = document.querySelector('.wrapper');
     this.currentTool = null;
     this.colors = {
       primaryColor: 'black',
       secondaryColor: null,
     };
     this.canvas = {
+      canvasContain: document.querySelector('.canvas-contain'),
       canvasElement: null,
+      canvasSecondary: null,
       sizeCanvas: 32,
       sizeRect: null,
     };

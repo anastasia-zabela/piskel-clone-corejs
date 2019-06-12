@@ -9,4 +9,6 @@
 | Jun 10 | Jun 10 | 3h | copy-frame and delete-frame tools |
 | Jun 10 | Jun 10 | 1h | create preview animation |
 | Jun 10 | Jun 10 | 30min | fullscreen mode |
-11.06 13:00
+| Jun 11 | Jun 11 | 3h | move-frame tool |
+| Jun 11 | Jun 12 | 6h | add line tool |
+
