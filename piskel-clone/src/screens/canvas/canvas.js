@@ -1,6 +1,7 @@
 import storage from '../../components/storage';
 import addPenTool from '../tools/pen-tool';
 import addLineTool from '../tools/line-tool';
+import addEraserTool from '../tools/eraser-tool';
 
 class Canvas {
   constructor(pixels) {
@@ -15,6 +16,7 @@ class Canvas {
 function addEventsOnCanvas(canvas) {
   addPenTool(canvas);
   addLineTool(canvas);
+  addEraserTool(canvas);
 }
 
 function createCanvas(sizeCanvas) {

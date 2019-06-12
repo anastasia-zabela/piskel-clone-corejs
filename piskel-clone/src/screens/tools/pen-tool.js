@@ -61,7 +61,6 @@ function handleMouseDown(e) {
 
 function handleMouseMove(e) {
   drawPixel(e);
-//   window.console.log('1: ', e.offsetX, e.offsetY, ', 2: ', e.offsetX, e.offsetY);
 }
 
 function handleMouseUp() {

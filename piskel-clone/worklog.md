@@ -11,4 +11,4 @@
 | Jun 10 | Jun 10 | 30min | fullscreen mode |
 | Jun 11 | Jun 11 | 3h | move-frame tool |
 | Jun 11 | Jun 12 | 6h | add line tool |
-
+| Jun 12 | Jun 12 | 15min | add eraser tool |
