@@ -2,6 +2,7 @@ import storage from '../../components/storage';
 import addPenTool from '../tools/pen-tool';
 import addLineTool from '../tools/line-tool';
 import addEraserTool from '../tools/eraser-tool';
+import addColorPickerTool from '../tools/choose-picker-tool';
 
 class Canvas {
   constructor(pixels) {
@@ -17,6 +18,7 @@ function addEventsOnCanvas(canvas) {
   addPenTool(canvas);
   addLineTool(canvas);
   addEraserTool(canvas);
+  addColorPickerTool(canvas);
 }
 
 function createCanvas(sizeCanvas) {
