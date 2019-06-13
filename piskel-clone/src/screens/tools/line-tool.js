@@ -93,9 +93,9 @@ function getCoords(e) {
 }
 
 function drawPixel(e) {
-  const { canvasSecondary, sizeRect } = storage.canvas;
-  const ctx = canvasSecondary.getContext('2d');
   if (storage.currentTool === 'line') {
+    const { canvasSecondary, sizeRect } = storage.canvas;
+    const ctx = canvasSecondary.getContext('2d');
     if (drawL) {
       canvasSecondary.style.zIndex = 15;
       for (let h = 0; h < canvasSecondary.width; h += sizeRect) {
@@ -103,7 +103,7 @@ function drawPixel(e) {
           if (h + sizeRect > e.offsetX && h <= e.offsetX
           && v + sizeRect > e.offsetY && v <= e.offsetY) {
             ctx.fillStyle = storage.colors.primaryColor;
-            window.console.log('x:', h / 25, ', y:', v / 25);
+
             x0 = h / sizeRect;
             y0 = v / sizeRect;
 

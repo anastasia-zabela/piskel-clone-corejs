@@ -12,3 +12,4 @@
 | Jun 11 | Jun 12 | 6h | add line tool |
 | Jun 12 | Jun 12 | 15min | add eraser tool |
 | Jun 13 | Jun 13 | 30min | add choose-picker tool |
+| Jun 13 | Jun 13 | 4h | add paint-bucket tool |

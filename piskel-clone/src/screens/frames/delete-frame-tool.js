@@ -11,7 +11,7 @@ function deleteFrame(e) {
   } while (target.tagName !== 'DIV');
 
   let currentNum = target.getAttribute('data-num-frame');
-  storage.framesData.splice(currentNum, currentNum);
+  storage.framesData.splice(currentNum, 1);
 
   if (target === storage.frame.currentFrame) {
     storage.frame.currentFrame = target.previousElementSibling;

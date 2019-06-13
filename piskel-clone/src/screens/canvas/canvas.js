@@ -3,6 +3,7 @@ import addPenTool from '../tools/pen-tool';
 import addLineTool from '../tools/line-tool';
 import addEraserTool from '../tools/eraser-tool';
 import addColorPickerTool from '../tools/choose-picker-tool';
+import addPaintBacket from '../tools/paint-backet-tool';
 
 class Canvas {
   constructor(pixels) {
@@ -19,6 +20,7 @@ function addEventsOnCanvas(canvas) {
   addLineTool(canvas);
   addEraserTool(canvas);
   addColorPickerTool(canvas);
+  addPaintBacket(canvas);
 }
 
 function createCanvas(sizeCanvas) {

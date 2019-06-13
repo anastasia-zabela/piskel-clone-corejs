@@ -5,7 +5,7 @@ function setFramesData(x, y) {
   const row = y / storage.canvas.sizeRect;
   const col = x / storage.canvas.sizeRect;
   const indexPiksel = storage.canvas.sizeCanvas * row + col;
-  if (storage.currentTool === 'pen') {
+  if (storage.currentTool === 'pen' || storage.currentTool === 'paintBucket') {
     storage.framesData[currentNum][indexPiksel] = [x, y,
       storage.canvas.sizeRect, storage.colors.primaryColor];
   } else if (storage.currentTool === 'eraser') {
