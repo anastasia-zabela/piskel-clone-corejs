@@ -15,3 +15,4 @@
 | Jun 13 | Jun 13 | 4h | add paint-bucket tool |
 | Jun 16 | Jun 16 | 30min | change design of app |
 | Jun 16 | Jun 16 | 2h | add choosing primary and secondary colors |
+| Jun 16 | Jun 16 | 30min | fix pen: unbroken drawing |
