@@ -7,6 +7,7 @@ import handleFullscreenMode from '../screens/preview/fullsreen-mode';
 import storage from './storage';
 import handleCanvasSizeButton from '../screens/canvas/canvas-size-button';
 import handleFrameTool from '../screens/frames/handle-frame-tool';
+import handleColorsChange from '../screens/colors/colors';
 
 function start() {
   handleAddFrameButton();
@@ -17,6 +18,7 @@ function start() {
   handleFullscreenMode();
   handleCanvasSizeButton();
   handleFrameTool(storage.frame.currentFrame);
+  handleColorsChange();
 }
 
 export default start;

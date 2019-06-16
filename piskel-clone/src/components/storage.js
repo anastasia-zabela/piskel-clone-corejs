@@ -2,7 +2,7 @@ class Storage {
   constructor() {
     this.currentTool = null;
     this.colors = {
-      primaryColor: 'rgba(0, 0, 0, 255)',
+      primaryColor: document.querySelector('.colors__primary-color').value,
       secondaryColor: null,
     };
     this.canvas = {

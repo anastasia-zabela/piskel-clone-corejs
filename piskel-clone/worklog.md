@@ -13,3 +13,5 @@
 | Jun 12 | Jun 12 | 15min | add eraser tool |
 | Jun 13 | Jun 13 | 30min | add choose-picker tool |
 | Jun 13 | Jun 13 | 4h | add paint-bucket tool |
+| Jun 16 | Jun 16 | 30min | change design of app |
+| Jun 16 | Jun 16 | 2h | add choosing primary and secondary colors |

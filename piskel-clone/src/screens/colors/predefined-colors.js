@@ -1,7 +1,6 @@
 import storage from '../../components/storage';
 
 const primaryColorField = document.querySelector('.colors__primary-color');
-// const secondaryColorField = document.querySelector('.colors__secondary-color');
 const predefinedColors = document.querySelector('.predefined-colors');
 
 function getCurrentColor(event) {
