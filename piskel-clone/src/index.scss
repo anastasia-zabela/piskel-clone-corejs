@@ -5,11 +5,16 @@
 @import './screens/preview/preview.scss';
 @import './screens/canvas/canvas-size-button.scss';
 
+img {
+    position: absolute;
+    width: 100px;
+    display: none;
+}
+
 body {
     height: 100vh;
     margin: 0;
     font-family: 'Nunito', Helvetica, sans-serif;
-    color: rgb(61, 61, 61);
 }
 
 .wrapper {
@@ -17,11 +22,12 @@ body {
     grid-template: 200px 1fr 1fr 50px / 50px 1fr 800px 1fr;
     padding: 30px 100px;
     height: 850px;
+    background: #686b70;
 }
 
 header {
     height: 50px;
-    background: #999;
+    background: #3f4249;
 }
 
 button {

@@ -10,19 +10,20 @@
     & button {
         height: 35px;
         width: 35px;
-        background: #fff;
-        border: 2px solid #47a16f;
+        background: #e1e6e2;
+        border: 2px solid #d6b87c;
         border-radius: 25px;
+        color: #3f4249;
     }
 
     & button:hover {
-        background: #47a16f;
+        background: #d6b87c;
         color: #fff;
         cursor: pointer;
     }
 
     & .selected {
-        background: #47a16f;
+        background: #d6b87c;
         color: #fff;
     }
 }

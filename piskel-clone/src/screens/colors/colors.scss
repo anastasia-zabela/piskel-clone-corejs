@@ -2,7 +2,6 @@
     grid-area: 2 / 1 / 3 / 2;
     width: 50px;
     margin: auto 0;
-    border: 1px solid #eee;
 
     & div {
         width: 50px;
@@ -21,12 +20,11 @@ $orange: #cc9348;
     grid-area: 3 / 1 / 4 / 2;
     width: 50px;
     margin: auto 0;
-    border: 1px solid #eee;
 
     & button {
         width: 50px;
         height: 50px;
-        border: 2px solid #d2cfcf;
+        border: 2px solid #e1e6e2;
     }
 
     &__color-blue {

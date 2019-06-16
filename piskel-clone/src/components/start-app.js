@@ -1,6 +1,6 @@
 import handleAddFrameButton from '../screens/frames/add-frame-button';
 import handleClickOnTools from '../screens/tools/handle-click-on-tools';
-import handleChooseColor from '../screens/colors/colors';
+import handleChooseColor from '../screens/colors/predefined-colors';
 import handleSliderFPS from '../screens/preview/slider-fps';
 import createPreviewAnimation from '../screens/preview/preview-animation';
 import handleFullscreenMode from '../screens/preview/fullsreen-mode';
