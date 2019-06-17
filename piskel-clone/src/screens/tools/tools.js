@@ -3,6 +3,7 @@ class Tools {
     this.tools = document.querySelector('.tools');
     this.pen = document.querySelector('.tools__pen-tool');
     this.paintBucket = document.querySelector('.tools__paint-bucket-tool');
+    this.paintSameColor = document.querySelector('.tools__paint-same-color-tool');
     this.colorPicker = document.querySelector('.tools__color-picker-tool');
     this.eraser = document.querySelector('.tools__eraser-tool');
     this.line = document.querySelector('.tools__line-tool');

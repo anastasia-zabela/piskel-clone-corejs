@@ -1,21 +1,7 @@
 import storage from '../../components/storage';
+import fullColorHex from '../../components/rgb-to-hex';
 
 const primaryColorField = document.querySelector('.colors__primary-color');
-
-function rgbToHex(rgb) {
-  let hex = Number(rgb).toString(16);
-  if (hex.length < 2) {
-    hex = `0${hex}`;
-  }
-  return hex;
-}
-
-function fullColorHex(r, g, b) {
-  const red = rgbToHex(r);
-  const green = rgbToHex(g);
-  const blue = rgbToHex(b);
-  return red + green + blue;
-}
 
 function chooseColor(e) {
   if (storage.currentTool === 'colorPicker') {

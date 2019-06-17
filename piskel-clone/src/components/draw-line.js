@@ -4,9 +4,7 @@ let pixelData;
 
 function setPixelData(x, y) {
   const { sizeRect } = storage.canvas;
-  const row = y;
-  const col = x;
-  const indexPiksel = storage.canvas.sizeCanvas * row + col;
+  const indexPiksel = storage.canvas.sizeCanvas * y + x;
   pixelData[indexPiksel] = [x * sizeRect, y * sizeRect,
     storage.canvas.sizeRect, storage.colors.primaryColor];
 }

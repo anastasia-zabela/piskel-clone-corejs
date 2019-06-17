@@ -30,7 +30,6 @@ function drawPixel(e) {
           if (h + sizeRect > e.offsetX && h <= e.offsetX
           && v + sizeRect > e.offsetY && v <= e.offsetY) {
             ctx.fillStyle = storage.colors.primaryColor;
-            // window.console.log('x:', h / 25, ', y:', v / 25);
             fillSpaces(h, v);
             x0 = h / sizeRect;
             y0 = v / sizeRect;

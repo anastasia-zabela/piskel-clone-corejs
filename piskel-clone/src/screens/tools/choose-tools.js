@@ -18,6 +18,11 @@ function chooseTools(event) {
           tools.currentTool = tools.paintBucket;
           tools.paintBucket.style.background = colorTools;
           break;
+        case tools.paintSameColor:
+          storage.currentTool = 'paintSameColor';
+          tools.currentTool = tools.paintSameColor;
+          tools.paintSameColor.style.background = colorTools;
+          break;
         case tools.colorPicker:
           storage.currentTool = 'colorPicker';
           tools.currentTool = tools.colorPicker;
@@ -36,11 +41,9 @@ function chooseTools(event) {
         default:
           break;
       }
-      localStorage.setItem('storage', JSON.stringify(storage));
     }
     target = target.parentNode;
   }
-  return storage;
 }
 
 export default chooseTools;
