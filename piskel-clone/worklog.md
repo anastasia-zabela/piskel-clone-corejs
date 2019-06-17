@@ -17,3 +17,4 @@
 | Jun 16 | Jun 16 | 2h | add choosing primary and secondary colors |
 | Jun 16 | Jun 16 | 30min | fix pen: unbroken drawing |
 | Jun 17 | Jun 17 | 30min | add paint all pixels of the same color tool |
+| Jun 17 | Jun 17 | 1h | add tooltips of tools |
