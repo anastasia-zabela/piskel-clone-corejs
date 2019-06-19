@@ -62,4 +62,9 @@
         @extend %tooltip;
         width: 100px;
     }
+
+    &__circle-tool div {
+        @extend %tooltip;
+        width: 100px;
+    }
 }

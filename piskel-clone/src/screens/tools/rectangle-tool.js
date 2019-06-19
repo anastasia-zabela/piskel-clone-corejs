@@ -109,18 +109,20 @@ function handleMouseMove(e) {
 }
 
 function handleMouseUp() {
-  const { canvasSecondary } = storage.canvas;
-  const { currentFrame } = storage.frame;
-  const ctx = canvasSecondary.getContext('2d');
-  const ctxFrame = currentFrame.children[0].getContext('2d');
-  ctx.clearRect(0, 0, canvasSecondary.width, canvasSecondary.height);
-  canvasSecondary.style.zIndex = 5;
-  drawRec = false;
-  x0 = null;
-  y0 = null;
-  setNewDataPixels(pixelData);
-  drawFinalPixelsOnCanvas(pixelData);
-  ctxFrame.drawImage(storage.canvas.canvasElement, 0, 0, 150, 150);
+  if (storage.currentTool === 'rectangle') {
+    const { canvasSecondary } = storage.canvas;
+    const { currentFrame } = storage.frame;
+    const ctx = canvasSecondary.getContext('2d');
+    const ctxFrame = currentFrame.children[0].getContext('2d');
+    ctx.clearRect(0, 0, canvasSecondary.width, canvasSecondary.height);
+    canvasSecondary.style.zIndex = 5;
+    drawRec = false;
+    x0 = null;
+    y0 = null;
+    setNewDataPixels(pixelData);
+    drawFinalPixelsOnCanvas(pixelData);
+    ctxFrame.drawImage(storage.canvas.canvasElement, 0, 0, 150, 150);
+  }
 }
 
 function addRectangleTool(canvas) {

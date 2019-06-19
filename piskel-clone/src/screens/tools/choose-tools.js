@@ -43,6 +43,11 @@ function chooseTools(event) {
           tools.currentTool = tools.rect;
           tools.rect.style.background = colorTools;
           break;
+        case tools.circle:
+          storage.currentTool = 'circle';
+          tools.currentTool = tools.circle;
+          tools.circle.style.background = colorTools;
+          break;
         default:
           break;
       }

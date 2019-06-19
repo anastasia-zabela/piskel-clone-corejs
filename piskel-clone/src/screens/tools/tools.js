@@ -8,6 +8,7 @@ class Tools {
     this.eraser = document.querySelector('.tools__eraser-tool');
     this.line = document.querySelector('.tools__line-tool');
     this.rect = document.querySelector('.tools__rectangle-tool');
+    this.circle = document.querySelector('.tools__circle-tool');
     this.currentTool = null;
   }
 }

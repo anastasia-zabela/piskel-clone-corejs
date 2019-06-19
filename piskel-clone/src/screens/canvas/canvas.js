@@ -6,6 +6,7 @@ import addColorPickerTool from '../tools/choose-picker-tool';
 import addPaintBacket from '../tools/paint-backet-tool';
 import addPaintSameColor from '../tools/paint-bucket-same-color-tool';
 import addRectangleTool from '../tools/rectangle-tool';
+import addCircleTool from '../tools/circle-tool';
 
 class Canvas {
   constructor(pixels) {
@@ -25,6 +26,7 @@ function addEventsOnCanvas(canvas) {
   addPaintBacket(canvas);
   addPaintSameColor(canvas);
   addRectangleTool(canvas);
+  addCircleTool(canvas);
 }
 
 function createCanvas(sizeCanvas) {

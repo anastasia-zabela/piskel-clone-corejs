@@ -19,3 +19,4 @@
 | Jun 17 | Jun 17 | 30min | add paint all pixels of the same color tool |
 | Jun 17 | Jun 17 | 1h | add tooltips of tools |
 | Jun 18 | Jun 19 | 2h | add rectangle tool |
+| Jun 19 | Jun 19 | 4h | add circle tool |
