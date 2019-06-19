@@ -1,6 +1,6 @@
 import storage from './storage';
 
-function drawFinalLineOnCanvas(data) {
+function drawFinalPixelsOnCanvas(data) {
   const ctx = storage.canvas.canvasElement.getContext('2d');
   data.forEach((elem) => {
     if (elem !== null) {
@@ -11,4 +11,4 @@ function drawFinalLineOnCanvas(data) {
   });
 }
 
-export default drawFinalLineOnCanvas;
+export default drawFinalPixelsOnCanvas;

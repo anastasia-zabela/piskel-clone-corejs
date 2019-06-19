@@ -7,6 +7,7 @@ class Tools {
     this.colorPicker = document.querySelector('.tools__color-picker-tool');
     this.eraser = document.querySelector('.tools__eraser-tool');
     this.line = document.querySelector('.tools__line-tool');
+    this.rect = document.querySelector('.tools__rectangle-tool');
     this.currentTool = null;
   }
 }

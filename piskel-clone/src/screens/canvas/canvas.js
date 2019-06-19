@@ -5,6 +5,7 @@ import addEraserTool from '../tools/eraser-tool';
 import addColorPickerTool from '../tools/choose-picker-tool';
 import addPaintBacket from '../tools/paint-backet-tool';
 import addPaintSameColor from '../tools/paint-bucket-same-color-tool';
+import addRectangleTool from '../tools/rectangle-tool';
 
 class Canvas {
   constructor(pixels) {
@@ -23,6 +24,7 @@ function addEventsOnCanvas(canvas) {
   addColorPickerTool(canvas);
   addPaintBacket(canvas);
   addPaintSameColor(canvas);
+  addRectangleTool(canvas);
 }
 
 function createCanvas(sizeCanvas) {

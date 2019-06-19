@@ -57,4 +57,9 @@
         @extend %tooltip;
         width: 100px;
     }
+
+    &__rectangle-tool div {
+        @extend %tooltip;
+        width: 100px;
+    }
 }

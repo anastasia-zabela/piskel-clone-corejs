@@ -38,6 +38,11 @@ function chooseTools(event) {
           tools.currentTool = tools.line;
           tools.line.style.background = colorTools;
           break;
+        case tools.rect:
+          storage.currentTool = 'rectangle';
+          tools.currentTool = tools.rect;
+          tools.rect.style.background = colorTools;
+          break;
         default:
           break;
       }
