@@ -26,50 +26,10 @@
         border: 1px solid #686b70;
         background: #e3decb;
         color: #3f4249;
-    }
 
-    &__pen-tool div {
-        @extend %tooltip;
-        width: 100px;
-    }
-
-    &__paint-bucket-tool div{
-        @extend %tooltip;
-        width: 140px;
-    }
-    
-    &__paint-same-color-tool div {
-        @extend %tooltip;
-        width: 140px;
-    }
-
-    &__color-picker-tool div {
-        @extend %tooltip;
-        width: 140px;
-    }
-
-    &__eraser-tool div {
-        @extend %tooltip;
-        width: 100px;
-    }
-
-    &__line-tool div {
-        @extend %tooltip;
-        width: 100px;
-    }
-
-    &__rectangle-tool div {
-        @extend %tooltip;
-        width: 100px;
-    }
-
-    &__circle-tool div {
-        @extend %tooltip;
-        width: 100px;
-    }
-
-    &__dithering-tool div {
-        @extend %tooltip;
-        width: 100px;
+        & div {
+            @extend %tooltip;
+            width: 140px; 
+        }
     }
 }

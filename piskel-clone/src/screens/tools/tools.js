@@ -10,6 +10,7 @@ class Tools {
     this.rect = document.querySelector('.tools__rectangle-tool');
     this.circle = document.querySelector('.tools__circle-tool');
     this.dithering = document.querySelector('.tools__dithering-tool');
+    this.lighten = document.querySelector('.tools__lighten-tool');
     this.currentTool = null;
   }
 }

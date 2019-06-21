@@ -53,6 +53,11 @@ function chooseTools(event) {
           tools.currentTool = tools.dithering;
           tools.dithering.style.background = colorTools;
           break;
+        case tools.lighten:
+          storage.currentTool = 'lighten';
+          tools.currentTool = tools.lighten;
+          tools.lighten.style.background = colorTools;
+          break;
         default:
           break;
       }
