@@ -20,7 +20,7 @@ class Storage {
     this.framesData = [
       new Array(this.canvas.sizeCanvas * this.canvas.sizeCanvas).fill(null),
     ];
-    this.currentFps = '1';
+    this.currentFps = '0';
   }
 }
 

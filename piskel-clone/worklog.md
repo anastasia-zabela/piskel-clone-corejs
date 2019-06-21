@@ -20,3 +20,4 @@
 | Jun 17 | Jun 17 | 1h | add tooltips of tools |
 | Jun 18 | Jun 19 | 2h | add rectangle tool |
 | Jun 19 | Jun 19 | 4h | add circle tool |
+| Jun 20 | Jun 21 | 4h | refactor: async preview animation |
