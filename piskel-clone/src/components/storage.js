@@ -3,7 +3,7 @@ class Storage {
     this.currentTool = null;
     this.colors = {
       primaryColor: '#acc7cd',
-      secondaryColor: null,
+      secondaryColor: '#e1e6e2',
     };
     this.canvas = {
       canvasContain: document.querySelector('.canvas-contain'),

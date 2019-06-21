@@ -24,3 +24,4 @@
 | Jun 21 | Jun 21 | 1h | feat: add dithering tool |
 | Jun 21 | Jun 21 | 1h | feat: add lighten tool |
 | Jun 21 | Jun 21 | 2h | feat: add keyboard shortcuts |
+| Jun 21 | Jun 21 | 2h | feat: add arrow for change colors |
