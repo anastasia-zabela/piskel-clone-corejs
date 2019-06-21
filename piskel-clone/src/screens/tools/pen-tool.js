@@ -37,8 +37,6 @@ function drawPixel(e) {
             ctx.fillRect(h, v, sizeRect, sizeRect);
             ctxFrame.drawImage(canvasElement, 0, 0, 150, 150);
             setFramesData(h, v);
-
-            localStorage.setItem('storage', JSON.stringify(storage));
           }
         }
       }

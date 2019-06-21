@@ -9,6 +9,7 @@ import addRectangleTool from '../tools/rectangle-tool';
 import addCircleTool from '../tools/circle-tool';
 import addDitheringTool from '../tools/dithering-tool';
 import addLightenTool from '../tools/lighten-tool';
+import showCoordsOfPixel from '../info-field/info';
 
 class Canvas {
   constructor(pixels) {
@@ -31,6 +32,7 @@ function addEventsOnCanvas(canvas) {
   addCircleTool(canvas);
   addDitheringTool(canvas);
   addLightenTool(canvas);
+  showCoordsOfPixel(canvas);
 }
 
 function createCanvas(sizeCanvas) {
