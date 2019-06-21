@@ -12,6 +12,7 @@ function deleteFrame(e) {
 
   let currentNum = target.getAttribute('data-num-frame');
   storage.framesData.splice(currentNum, 1);
+  window.console.log(storage.framesData);
 
   if (target === storage.frame.currentFrame) {
     storage.frame.currentFrame = target.previousElementSibling;

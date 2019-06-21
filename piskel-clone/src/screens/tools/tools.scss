@@ -67,4 +67,9 @@
         @extend %tooltip;
         width: 100px;
     }
+
+    &__dithering-tool div {
+        @extend %tooltip;
+        width: 100px;
+    }
 }

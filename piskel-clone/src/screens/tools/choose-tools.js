@@ -48,6 +48,11 @@ function chooseTools(event) {
           tools.currentTool = tools.circle;
           tools.circle.style.background = colorTools;
           break;
+        case tools.dithering:
+          storage.currentTool = 'dithering';
+          tools.currentTool = tools.dithering;
+          tools.dithering.style.background = colorTools;
+          break;
         default:
           break;
       }
