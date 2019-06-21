@@ -23,3 +23,4 @@
 | Jun 20 | Jun 21 | 4h | refactor: async preview animation |
 | Jun 21 | Jun 21 | 1h | feat: add dithering tool |
 | Jun 21 | Jun 21 | 1h | feat: add lighten tool |
+| Jun 21 | Jun 21 | 2h | feat: add keyboard shortcuts |

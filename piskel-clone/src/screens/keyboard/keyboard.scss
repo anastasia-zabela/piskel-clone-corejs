@@ -1,0 +1,120 @@
+.keyboard-modal {
+    grid-area: 4 / 1 / 5 / 2;
+
+    &--button {
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+        border: 2px solid #3f4249;
+        background: #acc7cd;
+    }
+}
+
+.keyboard-contain {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 50;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: #00000069;
+
+    &__modal {
+        position: relative;
+        width: 1200px;
+        height: 800px;
+        background: #3f4249;
+        border: #d6b87c 3px solid;
+
+        & h3 {
+            margin: 0;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            color: #d6b87c;
+        }
+
+        &--tool {
+            width: 350px;
+            font-size: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #e1e6e2;
+
+            & div {
+                display: flex;
+                align-items: center;
+                margin-bottom: 6px;
+                width: 300px;
+                height: 50px;
+                border: 1px solid #3f4249;
+            }
+
+            & i {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 15px;
+                width: 50px;
+                height: 50px;
+                background: #d6b87c;
+                color: #3f4249;
+            }
+
+            & button {
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+                background: #3f4249;
+                color: #acc7cd;
+                border: 3px solid #acc7cd;
+                cursor: pointer;
+            }
+
+            & span {
+                margin-left: 15px;
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+%line {
+    content: ' ';
+    position: absolute;
+    left: 15px;
+    height: 33px;
+    width: 2px;
+    background-color: #e1e6e2;
+}
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    width: 30px;
+    height: 30px;
+
+    &::before {
+        @extend %line;
+        transform: rotate(45deg);
+    }
+
+    &::after {
+        @extend %line;
+        transform: rotate(-45deg);
+    }
+
+    &:hover::before {
+        background: #d6b87c;
+    }
+
+    &:hover::after {
+        background: #d6b87c;
+    }
+}

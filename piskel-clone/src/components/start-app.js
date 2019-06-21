@@ -8,6 +8,7 @@ import handleCanvasSizeButton from '../screens/canvas/canvas-size-button';
 import handleFrameTool from '../screens/frames/handle-frame-tool';
 import handleColorsChange from '../screens/colors/colors';
 import addToolsTooltips from './view-tool-tooltips';
+import handleKeyboardModalWindow from '../screens/keyboard/keyboard-shortcuts';
 
 function start() {
   handleAddFrameButton();
@@ -19,6 +20,7 @@ function start() {
   handleFrameTool(storage.frame.currentFrame);
   handleColorsChange();
   addToolsTooltips();
+  handleKeyboardModalWindow();
 }
 
 export default start;

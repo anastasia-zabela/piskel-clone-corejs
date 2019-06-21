@@ -10,28 +10,31 @@ async function createPreviewAnimation(fps) {
   frames = Array.prototype.slice.call(frames);
   let indexFrame = 0;
 
-  const frameOfAnimation = new Promise((resolve, reject) => {
+  const frameOfAnimation = new Promise((resolve) => {
+    let res;
     if (+fps !== 0) {
-      resolve();
+      res = true;
     } else if (+fps === 0) {
-      reject();
+      res = false;
     }
+    resolve(res);
   });
 
   function animationFrames() {
     frameOfAnimation
-      .then(() => {
-        ctxPreview.clearRect(0, 0, preview.width, preview.height);
-        ctxPreview.imageSmoothingEnabled = false;
-        ctxPreview.drawImage(frames[indexFrame].children[0], 0, 0, preview.width, preview.height);
-        indexFrame += 1;
-        if (indexFrame === frames.length) {
-          indexFrame = 0;
+      .then((fulfilled) => {
+        if (fulfilled) {
+          ctxPreview.clearRect(0, 0, preview.width, preview.height);
+          ctxPreview.imageSmoothingEnabled = false;
+          ctxPreview.drawImage(frames[indexFrame].children[0], 0, 0, preview.width, preview.height);
+          indexFrame += 1;
+          if (indexFrame === frames.length) {
+            indexFrame = 0;
+          }
+        } else if (!fulfilled) {
+          ctxPreview.clearRect(0, 0, preview.width, preview.height);
+          ctxPreview.drawImage(storage.canvas.canvasElement, 0, 0, preview.width, preview.height);
         }
-      })
-      .catch(() => {
-        ctxPreview.clearRect(0, 0, preview.width, preview.height);
-        ctxPreview.drawImage(storage.canvas.canvasElement, 0, 0, preview.width, preview.height);
       });
     const newFrames = document.getElementsByClassName('frames-contain__wrapper-frame');
     if (frames.length === newFrames.length && fps === sliderFps.value) {
