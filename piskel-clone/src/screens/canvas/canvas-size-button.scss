@@ -8,11 +8,10 @@
     margin: 0 auto;
 
     & button {
-        height: 35px;
+        height: 25px;
         width: 35px;
         background: #e1e6e2;
-        border: 2px solid #d6b87c;
-        border-radius: 25px;
+        border: 2px solid #3f4249;
         color: #3f4249;
     }
 
@@ -23,7 +22,7 @@
     }
 
     & .selected {
-        background: #d6b87c;
-        color: #fff;
+        background: #acc7cd;
+        color: #3f4249;
     }
 }

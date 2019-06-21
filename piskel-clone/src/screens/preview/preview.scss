@@ -61,8 +61,12 @@
         height: 30px;
         margin: 10px auto;
         background: #d6b87c;
-        border: 0;
+        border: 2px solid #3f4249;
         color: #3f4249;
         border-radius: 8px;
+
+        &:hover {
+            background: #e3decb;
+        }
     }
 }
