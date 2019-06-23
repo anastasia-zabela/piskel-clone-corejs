@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "test-watch": "jest --watch",
-    "coverage": "coverage",
+    "coverage": "npx jest --coverage",
     "dev": "webpack-dev-server --mode development --watch",
     "build": "webpack --mode production",
     "start": "node src/index.js",
@@ -28,7 +28,9 @@
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
+    "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
     "css-loader": "^2.1.1",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",

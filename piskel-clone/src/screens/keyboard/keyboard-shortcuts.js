@@ -1,66 +1,70 @@
-import tools from '../tools/tools';
-import chooseTools from '../tools/choose-tools';
+import Tools from '../tools/tools';
 
-const keyboardButton = document.querySelector('.keyboard-modal--button');
-const keyboardModal = document.querySelector('.keyboard-contain');
-const closeKeyboard = document.querySelector('.close');
-
-function showModalWindow() {
-  keyboardModal.style.display = 'flex';
-}
-
-function closeModalWindow() {
-  keyboardModal.style.display = 'none';
-}
-
-function handleKeyDown(e) {
-  const key = e.code;
-  const event = {
-    target: null,
-  };
-  switch (key) {
-    case 'KeyP':
-      event.target = tools.pen;
-      break;
-    case 'KeyB':
-      event.target = tools.paintBucket;
-      break;
-    case 'KeyA':
-      event.target = tools.paintSameColor;
-      break;
-    case 'KeyO':
-      event.target = tools.colorPicker;
-      break;
-    case 'KeyE':
-      event.target = tools.eraser;
-      break;
-    case 'KeyL':
-      event.target = tools.line;
-      break;
-    case 'KeyR':
-      event.target = tools.rect;
-      break;
-    case 'KeyC':
-      event.target = tools.circle;
-      break;
-    case 'KeyT':
-      event.target = tools.dithering;
-      break;
-    case 'KeyU':
-      event.target = tools.lighten;
-      break;
-    default:
-      break;
+class Keyboard extends Tools {
+  constructor() {
+    super('keyboard');
+    this.keyboardButton = document.querySelector('.keyboard-modal--button');
+    this.keyboardModal = document.querySelector('.keyboard-contain');
+    this.closeKeyboard = document.querySelector('.close');
   }
-  if (event.target !== null) {
-    chooseTools(event);
+
+  showModalWindow() {
+    this.keyboardModal.style.display = 'flex';
+  }
+
+  closeModalWindow() {
+    this.keyboardModal.style.display = 'none';
+  }
+
+  handleKeyDown(e) {
+    const key = e.code;
+    const event = {
+      target: null,
+    };
+    switch (key) {
+      case 'KeyP':
+        event.target = this.pen;
+        break;
+      case 'KeyB':
+        event.target = this.paintBucket;
+        break;
+      case 'KeyA':
+        event.target = this.paintSameColor;
+        break;
+      case 'KeyO':
+        event.target = this.colorPicker;
+        break;
+      case 'KeyE':
+        event.target = this.eraser;
+        break;
+      case 'KeyL':
+        event.target = this.line;
+        break;
+      case 'KeyR':
+        event.target = this.rect;
+        break;
+      case 'KeyC':
+        event.target = this.circle;
+        break;
+      case 'KeyT':
+        event.target = this.dithering;
+        break;
+      case 'KeyU':
+        event.target = this.lighten;
+        break;
+      default:
+        break;
+    }
+    if (event.target !== null) {
+      this.chooseTools(event);
+    }
+  }
+
+  handleKeyboardModalWindow() {
+    this.keyboardButton.addEventListener('click', this.showModalWindow.bind(this));
+    this.closeKeyboard.addEventListener('click', this.closeModalWindow.bind(this));
+    document.addEventListener('keydown', this.handleKeyDown.bind(this));
   }
 }
 
-function handleKeyboardModalWindow() {
-  keyboardButton.addEventListener('click', showModalWindow);
-  closeKeyboard.addEventListener('click', closeModalWindow);
-  document.addEventListener('keydown', handleKeyDown);
-}
-
-export default handleKeyboardModalWindow;
+export default Keyboard;

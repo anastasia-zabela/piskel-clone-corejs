@@ -1,3 +1,5 @@
+import storage from '../../components/storage';
+
 class Tools {
   constructor() {
     this.tools = document.querySelector('.tools');
@@ -13,8 +15,104 @@ class Tools {
     this.lighten = document.querySelector('.tools__lighten-tool');
     this.currentTool = null;
   }
+
+  chooseTools(event) {
+    let { target } = event;
+    while (target !== this.tools) {
+      if (target.tagName === 'BUTTON') {
+        if (storage.currentTool !== null) { this.currentTool.style.background = ''; }
+        const colorTools = '#acc7cd';
+        switch (target) {
+          case this.pen:
+            storage.currentTool = 'pen';
+            this.currentTool = this.pen;
+            this.pen.style.background = colorTools;
+            break;
+          case this.paintBucket:
+            storage.currentTool = 'paintBucket';
+            this.currentTool = this.paintBucket;
+            this.paintBucket.style.background = colorTools;
+            break;
+          case this.paintSameColor:
+            storage.currentTool = 'paintSameColor';
+            this.currentTool = this.paintSameColor;
+            this.paintSameColor.style.background = colorTools;
+            break;
+          case this.colorPicker:
+            storage.currentTool = 'colorPicker';
+            this.currentTool = this.colorPicker;
+            this.colorPicker.style.background = colorTools;
+            break;
+          case this.eraser:
+            storage.currentTool = 'eraser';
+            this.currentTool = this.eraser;
+            this.eraser.style.background = colorTools;
+            break;
+          case this.line:
+            storage.currentTool = 'line';
+            this.currentTool = this.line;
+            this.line.style.background = colorTools;
+            break;
+          case this.rect:
+            storage.currentTool = 'rectangle';
+            this.currentTool = this.rect;
+            this.rect.style.background = colorTools;
+            break;
+          case this.circle:
+            storage.currentTool = 'circle';
+            this.currentTool = this.circle;
+            this.circle.style.background = colorTools;
+            break;
+          case this.dithering:
+            storage.currentTool = 'dithering';
+            this.currentTool = this.dithering;
+            this.dithering.style.background = colorTools;
+            break;
+          case this.lighten:
+            storage.currentTool = 'lighten';
+            this.currentTool = this.lighten;
+            this.lighten.style.background = colorTools;
+            break;
+          default:
+            break;
+        }
+      }
+      target = target.parentNode;
+    }
+    return storage.currentTool;
+  }
+
+  addTooltips(event) {
+    let { target } = event;
+    let res;
+    while (target !== this.tools) {
+      if (target.tagName === 'BUTTON') {
+        target.children[1].style.display = 'flex';
+        res = getComputedStyle(target.children[1]).display;
+      }
+      target = target.parentNode;
+    }
+    return res;
+  }
+
+  removeTooltips(event) {
+    let { target } = event;
+    let res;
+    while (target !== this.tools) {
+      if (target.tagName === 'BUTTON') {
+        target.children[1].style.display = 'none';
+        res = getComputedStyle(target.children[1]).display;
+      }
+      target = target.parentNode;
+    }
+    return res;
+  }
+
+  handleEventsTools() {
+    this.tools.addEventListener('click', this.chooseTools.bind(this));
+    this.tools.addEventListener('mousemove', this.addTooltips.bind(this));
+    this.tools.addEventListener('mouseleave', this.removeTooltips.bind(this), true);
+  }
 }
 
-const tools = new Tools();
-
-export default tools;
+export default Tools;
