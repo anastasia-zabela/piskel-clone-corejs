@@ -1,0 +1,23 @@
+.export-contain {
+    grid-area: 3 / 4 / 4 / 5;
+    width: 350px;
+    height: 200px;
+    margin: auto;
+    background: #3f4249;
+    border: 2px solid #d6b87c;
+
+    & h4 {
+        margin: 10px;
+        text-transform: uppercase;
+        text-align: center;
+        color: #d6b87c;
+    }
+
+    & button {
+        margin: auto;
+        background: #3f4249;
+        color: #acc7cd;
+        border: 2px solid #acc7cd;
+        cursor: pointer;
+    }
+}

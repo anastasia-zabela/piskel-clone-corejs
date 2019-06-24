@@ -7,13 +7,13 @@ import storage from './storage';
 import handleCanvasSizeButton from '../screens/canvas/canvas-size-button';
 import handleFrameTool from '../screens/frames/handle-frame-tool';
 import handleColorsChange from '../screens/colors/colors';
-// import addToolsTooltips from './view-tool-tooltips';
-// import handleKeyboardModalWindow from '../screens/keyboard/keyboard-shortcuts';
 import Tools from '../screens/tools/tools';
 import Keyboard from '../screens/keyboard/keyboard-shortcuts';
+import Export from '../screens/export/export';
 
 const tools = new Tools();
 const keyboard = new Keyboard();
+const exp = new Export();
 
 function start() {
   handleAddFrameButton();
@@ -24,8 +24,8 @@ function start() {
   handleCanvasSizeButton();
   handleFrameTool(storage.frame.currentFrame);
   handleColorsChange();
-  //   addToolsTooltips();
   keyboard.handleKeyboardModalWindow();
+  exp.handleExports();
 }
 
 export default start;

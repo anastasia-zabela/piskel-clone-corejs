@@ -27,3 +27,4 @@
 | Jun 21 | Jun 21 | 30min | feat: add arrow for change colors |
 | Jun 21 | Jun 21 | 15min | feat: show cursor coordinates |
 | Jun 21 | Jun 21 | 3h | refactor: change tools and keyboard classes, add tests for them |
+| Jun 24 | Jun 24 | 5h | feat: add export to gif |

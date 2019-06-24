@@ -48,6 +48,7 @@
     "webpack-dev-server": "^3.5.1"
   },
   "dependencies": {
+    "ccapture.js": "^1.1.0",
     "file-loader": "^3.0.1"
   }
 }
