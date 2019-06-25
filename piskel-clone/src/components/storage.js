@@ -7,10 +7,10 @@ class Storage {
     };
     this.canvas = {
       canvasContain: document.querySelector('.canvas-contain'),
-      canvasElement: null,
+      canvasElement: document.querySelector('.canvas-contain__drawing-canvas'),
       canvasSecondary: null,
       sizeCanvas: 32,
-      sizeRect: null,
+      sizeRect: 25,
     };
     this.frame = {
       countOfFrame: 1,

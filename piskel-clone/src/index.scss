@@ -3,7 +3,6 @@
 @import './screens/frames/frames.scss';
 @import './screens/canvas/canvas.scss';
 @import './screens/preview/preview.scss';
-@import './screens/canvas/canvas-size-button.scss';
 @import './screens/keyboard/keyboard.scss';
 @import './screens/info-field/info.scss';
 @import './screens/export/export.scss';
@@ -29,8 +28,26 @@ body {
 }
 
 header {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr;
     height: 50px;
     background: #3f4249;
+
+    & .google-login {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 0 20px;
+    }
+}
+
+h1 {
+    margin: 0 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: #e1e6e2;
 }
 
 button {

@@ -1,29 +1,33 @@
 import storage from '../../components/storage';
 
-const primaryColorField = document.querySelector('.colors__primary-color');
-const secondaryColorField = document.querySelector('.colors__secondary-color');
-const arrowChange = document.querySelector('.colors__arrow');
+class Colors {
+  constructor() {
+    this.primaryColorField = document.querySelector('.colors__primary-color');
+    this.secondaryColorField = document.querySelector('.colors__secondary-color');
+    this.arrowChange = document.querySelector('.colors__arrow');
+  }
 
-function changePrimaryColor() {
-  storage.colors.primaryColor = this.value;
+  static changePrimaryColor() {
+    storage.colors.primaryColor = this.value;
+  }
+
+  static changeSecondaryColor() {
+    storage.colors.secondaryColor = this.value;
+  }
+
+  changeColors() {
+    const { primaryColor, secondaryColor } = storage.colors;
+    storage.colors.primaryColor = secondaryColor;
+    storage.colors.secondaryColor = primaryColor;
+    this.primaryColorField.value = secondaryColor;
+    this.secondaryColorField.value = primaryColor;
+  }
+
+  handleColorsChange() {
+    this.primaryColorField.addEventListener('change', Colors.changePrimaryColor);
+    this.secondaryColorField.addEventListener('change', Colors.changeSecondaryColor);
+    this.arrowChange.addEventListener('click', this.changeColors.bind(this));
+  }
 }
 
-function changeSecondaryColor() {
-  storage.colors.secondaryColor = this.value;
-}
-
-function changeColors() {
-  const { primaryColor, secondaryColor } = storage.colors;
-  storage.colors.primaryColor = secondaryColor;
-  storage.colors.secondaryColor = primaryColor;
-  primaryColorField.value = secondaryColor;
-  secondaryColorField.value = primaryColor;
-}
-
-function handleColorsChange() {
-  primaryColorField.addEventListener('change', changePrimaryColor);
-  secondaryColorField.addEventListener('change', changeSecondaryColor);
-  arrowChange.addEventListener('click', changeColors);
-}
-
-export default handleColorsChange;
+export default Colors;

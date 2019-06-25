@@ -1,6 +1,6 @@
-import createCanvas from './canvas';
-import deleteFrame from '../frames/delete-frame-tool';
+import Canvas from './canvas';
 import storage from '../../components/storage';
+import FrameTools from '../frames/frame-tools';
 
 const canvasSizeButton = document.querySelector('.canvas-size');
 
@@ -19,7 +19,8 @@ function deleteOldFrame(size) {
     const event = {
       target: elem.children[0],
     };
-    deleteFrame(event);
+    const frameTools = new FrameTools();
+    frameTools.deleteFrame(event);
     return elem;
   });
 }
@@ -32,7 +33,8 @@ function changeCanvasSize(e) {
     oldSize.classList.remove('selected');
     target.classList.add('selected');
     deleteOldFrame(size);
-    createCanvas(size);
+    const newCanvas = new Canvas();
+    newCanvas.createCanvas(size);
   }
 }
 
