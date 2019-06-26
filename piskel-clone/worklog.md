@@ -29,3 +29,4 @@
 | Jun 21 | Jun 21 | 3h | refactor: change tools and keyboard classes, add tests for them |
 | Jun 24 | Jun 24 | 5h | feat: add export to gif |
 | Jun 25 | Jun 25 | 3h | refactor: change frame-tools class |
+| Jun 26 | Jun 26 | 4h | feat: add login with google |

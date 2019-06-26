@@ -12,8 +12,11 @@
 <body>
     <header class="header">
         <h1>Piskel clone</h1>
-        <div class="g-signin2 google-login" data-onsuccess="onSignIn"></div>
+        <nav class="header__navigation-auth">
+           <button class="header__sing-in-button">Sign in</button> 
+        </nav>
     </header>
+
     <section class="wrapper">
         <section class="tools">
             <button class="tools__pen-tool">
@@ -56,7 +59,15 @@
                 <span class="fas fa-adjust"></span>
                 <div>Lighten (U)</div>
             </button>
-        </section>
+            <button class="tools__move-tool">
+                <span class="fas fa-hand-paper"></span>
+                <div>Move tool (M)</div>
+            </button>
+            <button class="tools__shape-selection-tool">
+                <span class="fas fa-magic"></span>
+                <div>Shape selection (S)</div>
+            </button>
+    </section>
         <section class="colors">
             <input class="colors__primary-color" type="color" value="#acc7cd">
             <input class="colors__secondary-color" type="color" value="#e1e6e2">
@@ -160,17 +171,58 @@
                     <i class="fas fa-adjust"></i>
                     <button>U</button>
                     <span>Lighten tool</span>
-                </div>  
+                </div>
+                <div>
+                    <i class="fas fa-hand-paper"></i>
+                    <button>M</button>
+                    <span>Move tool</span>
+                </div>
+                <div>
+                    <i class="fas fa-magic"></i>
+                    <button>S</button>
+                    <span>Shape selection</span>
+                </div>
             </div>
+        </article>
+    </section>
+    <section class="authorization">
+        <article class="authorization-window">
+            <h3>Sing in</h3>
+            <div class="close"></div>
+            <div class="g-signin2 google-login" data-onsuccess="onSignIn"></div>
         </article>
     </section>
     <script>
         function onSignIn(googleUser) {
-            var profile = googleUser.getBasicProfile();
-            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            const profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId());
             console.log('Name: ' + profile.getName());
             console.log('Image URL: ' + profile.getImageUrl());
-            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+            console.log('Email: ' + profile.getEmail());
+            const profileButton = document.createElement('button');
+            profileButton.classList.add('header__profile');
+            profileButton.innerHTML = `<img src=${profile.getImageUrl()} />${profile.getName()}`;
+            const nav = document.querySelector('.header__navigation-auth');
+            const signInButton = document.querySelector('.header__sing-in-button');
+            signInButton.style.display = 'none';
+            const authWindow = document.querySelector('.authorization');
+
+            const signOutButton = document.createElement('button');
+            signOutButton.classList.add('header__sing-out-button');
+            signOutButton.innerHTML = 'Sign out';
+            signOutButton.addEventListener('click', () => {
+                const auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                    console.log('User signed out.');
+                    signInButton.style.display = 'inline-block';
+                    nav.removeChild(signOutButton);
+                    nav.removeChild(profileButton);
+                    authWindow.style.display = 'none';
+                });
+            });
+
+            nav.insertAdjacentElement('beforeend', signOutButton);
+            nav.insertAdjacentElement('beforeend', profileButton);
         }
     </script>
 </body>

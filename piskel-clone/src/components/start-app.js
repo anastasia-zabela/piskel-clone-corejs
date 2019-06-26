@@ -8,12 +8,14 @@ import Keyboard from '../screens/keyboard/keyboard-shortcuts';
 import Export from '../screens/export/export';
 import FrameTools from '../screens/frames/frame-tools';
 import Colors from '../screens/colors/colors';
+import Authorization from '../screens/authorization/auth';
 
 const tools = new Tools();
 const keyboard = new Keyboard();
 const frameTools = new FrameTools();
 const exp = new Export();
 const colors = new Colors();
+const auth = new Authorization();
 
 function start() {
   frameTools.handleAddFrameButton();
@@ -26,6 +28,7 @@ function start() {
   colors.handleColorsChange();
   keyboard.handleKeyboardModalWindow();
   exp.handleExports();
+  auth.handleSingInButton();
 }
 
 export default start;

@@ -6,12 +6,7 @@
 @import './screens/keyboard/keyboard.scss';
 @import './screens/info-field/info.scss';
 @import './screens/export/export.scss';
-
-img {
-    position: absolute;
-    width: 100px;
-    display: none;
-}
+@import './screens/authorization/auth.scss';
 
 body {
     height: 100vh;
@@ -27,17 +22,41 @@ body {
     background: #686b70;
 }
 
-header {
+.header {
     display: grid;
     grid-template: 1fr / 1fr 1fr;
     height: 50px;
     background: #3f4249;
 
-    & .google-login {
+    &__navigation-auth {
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        margin: 0 20px;
+        padding: 0 30px;
+    }
+
+    %auth-button {
+        width: 100px;
+        height: 35px;
+        text-transform: uppercase;
+        font-weight: bold;
+        background: #acc7cd;
+        border: 2px solid #e1e6e2;
+        color: #3f4249;
+
+        &:hover {
+            background: #d6b87c;
+            cursor: pointer;
+        }
+    }
+
+    &__sing-in-button {
+        @extend %auth-button;
+    }
+
+    &__sing-out-button {
+        @extend %auth-button;
+        margin-right: 20px;
     }
 }
 
@@ -58,6 +77,44 @@ button {
     align-items: center;
     box-sizing: border-box;
 }
+
+%close-line {
+    content: ' ';
+    position: absolute;
+    left: 15px;
+    height: 33px;
+    width: 2px;
+    // background-color: #e1e6e2;
+}
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    width: 30px;
+    height: 30px;
+
+    &::before {
+        @extend %close-color;
+        @extend %close-line;
+        transform: rotate(45deg);
+    }
+
+    &::after {
+        @extend %close-color;
+        @extend %close-line;
+        transform: rotate(-45deg);
+    }
+
+    &:hover::before {
+        background: #d6b87c;
+    }
+
+    &:hover::after {
+        background: #d6b87c;
+    }
+}
+
 
 @font-face {
     font-family: 'Nunito';

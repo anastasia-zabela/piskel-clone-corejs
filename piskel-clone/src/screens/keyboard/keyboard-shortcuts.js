@@ -52,6 +52,12 @@ class Keyboard extends Tools {
       case 'KeyU':
         event.target = this.lighten;
         break;
+      case 'KeyM':
+        event.target = this.move;
+        break;
+      case 'KeyS':
+        event.target = this.shape;
+        break;
       default:
         break;
     }

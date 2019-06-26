@@ -13,6 +13,8 @@ class Tools {
     this.circle = document.querySelector('.tools__circle-tool');
     this.dithering = document.querySelector('.tools__dithering-tool');
     this.lighten = document.querySelector('.tools__lighten-tool');
+    this.move = document.querySelector('.tools__move-tool');
+    this.shape = document.querySelector('.tools__shape-selection-tool');
     this.currentTool = null;
   }
 
@@ -72,6 +74,16 @@ class Tools {
             storage.currentTool = 'lighten';
             this.currentTool = this.lighten;
             this.lighten.style.background = colorTools;
+            break;
+          case this.move:
+            storage.currentTool = 'move';
+            this.currentTool = this.move;
+            this.move.style.background = colorTools;
+            break;
+          case this.shape:
+            storage.currentTool = 'shape';
+            this.currentTool = this.shape;
+            this.shape.style.background = colorTools;
             break;
           default:
             break;
