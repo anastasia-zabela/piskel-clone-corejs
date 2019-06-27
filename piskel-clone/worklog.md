@@ -30,3 +30,4 @@
 | Jun 24 | Jun 24 | 5h | feat: add export to gif |
 | Jun 25 | Jun 25 | 3h | refactor: change frame-tools class |
 | Jun 26 | Jun 26 | 4h | feat: add login with google |
+| Jun 26 | Jun 27 | 4h | feat: create landing page |

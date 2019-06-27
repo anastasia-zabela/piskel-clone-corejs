@@ -16,8 +16,74 @@
            <button class="header__sing-in-button">Sign in</button> 
         </nav>
     </header>
-
-    <section class="wrapper">
+    <section class="landing-page">
+        <article class="landing-page__piskel-app">
+            <div>
+                <h2>This is a free online editor for animated sprites & pixel art</h2>
+                <p>Go to create an animated sprite</p>
+                <button class="landing-page__piskel-app--create-sprite">Create sprite</button> 
+            </div>
+        </article>
+        <article class="landing-page__animation-example">
+            <div>
+                <h2>Example sprites</h2>
+            </div>
+        </article>
+        <article class="landing-page__functionality">
+            <div>
+                <ul>
+                    <li>
+                        <i class="fas fa-play-circle"></i>
+                        <h3>Live preview</h3>
+                        <p>Check a preview of your animation in real time as you draw.</p>
+                    </li>
+                    <li>
+                        <i class="fab fa-google"></i>
+                        <h3>Google Sign in</h3>
+                        <p>No need to remember yet another password, just use your Google account to sign in.</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-file-export"></i>
+                        <h3>Export to GIF</h3>
+                        <p>Export your animated sprite to file system in .gif format</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-cloud-download-alt"></i>
+                        <h3>Save your session</h3>
+                        <p>You can save your current session after sign in with google login</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-forward"></i>
+                        <h3>Adjustable FPS</h3>
+                        <p>Customize fps parameter of final animation</p>
+                    </li>
+                    <li>
+                        <i class="fas fa-pen-fancy"></i>
+                        <h3>A lot of diffrent tools</h3>
+                        <p>The editor has 10 diffrent tools for your creative</p>
+                    </li>
+                </ul>
+            </div>
+        </article>
+        <article class="landing-page__about-author">
+            <div>
+                <h2>Contacts</h2>
+                <h3>App developed by Anastasia Zabela for educational purposes during Roling Scopes School course</h3>
+                <div class="contacts-items">
+                    <a class="far fa-envelope" href="mailto:zabela113@mail.ru"></a>
+                    <a class="fab fa-telegram-plane" href="https://t.me/anastasiazabela" target="_blank"></a>
+                    <a class="fab fa-instagram" href="https://www.instagram.com/anastasia.lion/" target="_blank"></a>
+                    <a class="fab fa-github-alt" href="https://github.com/anastasia-zabela" target="_blank"></a>
+                    <a id="contact-cv" href="https://anastasia-zabela.github.io/rsschool-2019Q1-cv/" target="_blank">CV</a>
+                </div>
+            </div>
+        </article>
+        <footer class="landing-page__footer">
+            <p>Original idea by <a href="https://www.piskelapp.com/">piskelapp.com</a></p>
+        </footer>
+    </section>
+    <section class="wrapper piskel-app" style="display: none">
+        <button class="back-to-landing-page-button fas fa-arrow-left"></button>
         <section class="tools">
             <button class="tools__pen-tool">
                 <span class="fas fa-pen"></span>
@@ -189,7 +255,7 @@
         <article class="authorization-window">
             <h3>Sing in</h3>
             <div class="close"></div>
-            <div class="g-signin2 google-login" data-onsuccess="onSignIn"></div>
+            <!-- <div class="g-signin2 google-login" data-onsuccess="onSignIn"></div> -->
         </article>
     </section>
     <script>
@@ -217,12 +283,12 @@
                     signInButton.style.display = 'inline-block';
                     nav.removeChild(signOutButton);
                     nav.removeChild(profileButton);
-                    authWindow.style.display = 'none';
                 });
             });
 
             nav.insertAdjacentElement('beforeend', signOutButton);
             nav.insertAdjacentElement('beforeend', profileButton);
+            authWindow.style.display = 'none';
         }
     </script>
 </body>

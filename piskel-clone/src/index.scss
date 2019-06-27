@@ -7,11 +7,13 @@
 @import './screens/info-field/info.scss';
 @import './screens/export/export.scss';
 @import './screens/authorization/auth.scss';
+@import './screens/landing-page/landing-page.scss';
 
 body {
     height: 100vh;
     margin: 0;
     font-family: 'Nunito', Helvetica, sans-serif;
+    color: #3f4249;
 }
 
 .wrapper {
@@ -67,6 +69,19 @@ h1 {
     align-items: center;
     text-transform: uppercase;
     color: #e1e6e2;
+}
+
+h2, h3, p {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 50px 0;
+}
+
+li {
+    list-style: none;
 }
 
 button {
