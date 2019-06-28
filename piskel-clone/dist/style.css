@@ -234,6 +234,9 @@
     font-size: 25px;
     border: 2px solid #3f4249;
     background: #acc7cd; }
+    .keyboard-modal--button:hover {
+      cursor: pointer;
+      background: #e3decb; }
 
 .keyboard-contain {
   position: absolute;
@@ -310,7 +313,9 @@
 .export-contain {
   grid-area: 3 / 4 / 4 / 5;
   width: 350px;
-  height: 200px;
+  height: 55px;
+  display: grid;
+  grid-template: 1fr / 65px 1fr 1fr 1fr;
   margin: auto;
   background: #3f4249;
   border: 2px solid #d6b87c; }
@@ -319,12 +324,25 @@
     text-transform: uppercase;
     text-align: center;
     color: #d6b87c; }
-  .export-contain button {
+  .export-contain i {
+    color: #e3decb;
     margin: auto;
+    font-size: 32px; }
+  .export-contain button {
+    height: 40px;
     background: #3f4249;
     color: #acc7cd;
     border: 2px solid #acc7cd;
     cursor: pointer; }
+  .export-contain__gif {
+    margin: auto;
+    width: 50px; }
+  .export-contain__gd {
+    margin: auto 0;
+    width: 60px; }
+
+.google-drive {
+  margin: auto 0; }
 
 .authorization {
   z-index: 50;
@@ -344,6 +362,7 @@
     background: #e1e6e2;
     border: 3px solid #acc7cd; }
   .authorization h3 {
+    margin: 20px 0;
     text-align: center;
     font-size: 30px;
     color: #3f4249; }
@@ -366,101 +385,145 @@
     width: 25px;
     margin-right: 15px; }
 
-.landing-page__piskel-app {
-  display: grid;
-  grid-template: 1fr / 1fr 1.5fr;
-  height: 600px;
-  background: #acc7cd; }
-  .landing-page__piskel-app div {
-    width: 400px;
-    height: 300px;
-    margin: auto; }
-  .landing-page__piskel-app h2 {
-    margin-bottom: 20px;
-    font-size: 25px; }
-  .landing-page__piskel-app p {
-    font-size: 20px; }
-  .landing-page__piskel-app button {
-    width: 150px;
-    height: 50px;
-    margin-top: 30px;
-    font-size: 20px;
-    color: #3f4249;
-    background: #d6b87c;
-    border: 3px solid #686b70; }
-    .landing-page__piskel-app button:hover {
-      cursor: pointer;
-      background: #e3decb; }
-
-.landing-page__animation-example {
-  height: 400px;
-  text-transform: uppercase;
-  background: #686b70;
-  color: #e1e6e2; }
-
-.landing-page__functionality {
-  background: #e3decb; }
-  .landing-page__functionality li {
+.landing-page {
+  display: none; }
+  .landing-page__piskel-app {
     display: grid;
-    grid-template: 1fr 1fr / 80px 1fr;
-    width: 600px;
-    height: 100px;
-    margin: auto; }
-  .landing-page__functionality i {
-    grid-area: 1 / 1 / -1 / 2;
-    display: flex;
-    align-items: center;
-    font-size: 50px; }
-  .landing-page__functionality h3 {
-    display: flex;
-    align-items: flex-end; }
-
-.landing-page__about-author {
-  padding: 30px 0;
-  background: #d6b87c;
-  text-align: center; }
-  .landing-page__about-author div {
-    margin: auto;
-    width: 500px; }
-  .landing-page__about-author h2 {
+    grid-template: 1fr / 1fr 1.5fr;
+    height: 600px;
+    background: #acc7cd; }
+    .landing-page__piskel-app div {
+      width: 400px;
+      height: 300px;
+      margin: auto; }
+    .landing-page__piskel-app h2 {
+      margin-bottom: 20px;
+      font-size: 25px; }
+    .landing-page__piskel-app p {
+      font-size: 20px; }
+    .landing-page__piskel-app button {
+      width: 150px;
+      height: 50px;
+      margin-top: 30px;
+      font-size: 20px;
+      color: #3f4249;
+      background: #d6b87c;
+      border: 3px solid #686b70; }
+      .landing-page__piskel-app button:hover {
+        cursor: pointer;
+        background: #e3decb; }
+    .landing-page__piskel-app img {
+      width: 900px;
+      margin: auto; }
+  .landing-page__animation-example {
+    height: 400px;
     text-transform: uppercase;
-    margin: 20px 0; }
-  .landing-page__about-author .contacts-items {
-    margin: 20px auto;
-    width: 300px;
-    display: flex;
-    justify-content: space-around; }
-    .landing-page__about-author .contacts-items a {
-      text-decoration: none;
-      font-size: 35px;
-      color: #3f4249; }
-      .landing-page__about-author .contacts-items a:hover {
-        color: #e3decb; }
-    .landing-page__about-author .contacts-items #contact-cv {
-      font-size: 15px;
-      font-weight: bold;
-      border: 3px solid #3f4249;
-      border-radius: 8px;
-      width: 28px;
-      height: 28px;
+    background: #686b70;
+    color: #e1e6e2; }
+  .landing-page__functionality {
+    background: #e3decb; }
+    .landing-page__functionality li {
+      display: grid;
+      grid-template: 1fr 1fr / 80px 1fr;
+      width: 600px;
+      height: 100px;
+      margin: auto; }
+    .landing-page__functionality i {
+      grid-area: 1 / 1 / -1 / 2;
       display: flex;
       align-items: center;
-      justify-content: center; }
-      .landing-page__about-author .contacts-items #contact-cv:hover {
-        border-color: #e3decb; }
+      font-size: 50px; }
+    .landing-page__functionality h3 {
+      display: flex;
+      align-items: flex-end; }
+  .landing-page__about-author {
+    padding: 30px 0;
+    background: #d6b87c;
+    text-align: center; }
+    .landing-page__about-author div {
+      margin: auto;
+      width: 500px; }
+    .landing-page__about-author h2 {
+      text-transform: uppercase;
+      margin: 20px 0; }
+    .landing-page__about-author .contacts-items {
+      margin: 20px auto;
+      width: 300px;
+      display: flex;
+      justify-content: space-around; }
+      .landing-page__about-author .contacts-items a {
+        text-decoration: none;
+        font-size: 35px;
+        color: #3f4249; }
+        .landing-page__about-author .contacts-items a:hover {
+          color: #e3decb; }
+      .landing-page__about-author .contacts-items #contact-cv {
+        font-size: 15px;
+        font-weight: bold;
+        border: 3px solid #3f4249;
+        border-radius: 8px;
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        .landing-page__about-author .contacts-items #contact-cv:hover {
+          border-color: #e3decb; }
+  .landing-page__footer {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    background: #686b70;
+    color: #e3decb; }
+    .landing-page__footer a {
+      text-decoration: none;
+      color: #acc7cd; }
+      .landing-page__footer a:hover {
+        color: #d6b87c; }
 
-.landing-page__footer {
+.back-to-landing-page-button {
+  cursor: pointer;
+  position: absolute;
+  left: 25px;
+  width: 50px;
   height: 50px;
-  display: flex;
+  font-size: 22px;
+  background: #acc7cd;
+  color: #3f4249;
+  border: 2px solid #3f4249; }
+  .back-to-landing-page-button:hover {
+    background: #e3decb; }
+
+.user-session-button {
+  position: absolute;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  font-size: 25px;
+  background: #d6b87c;
+  border: 2px solid #3f4249;
+  color: #3f4249; }
+  .user-session-button:hover {
+    cursor: pointer;
+    background: #e3decb; }
+
+#delete {
+  top: 140px; }
+
+.session-message {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  display: none;
+  justify-content: center;
   align-items: center;
-  padding: 0 50px;
-  background: #686b70;
-  color: #e3decb; }
-  .landing-page__footer a {
-    text-decoration: none;
-    color: #acc7cd; }
-    .landing-page__footer a:hover {
-      color: #d6b87c; }
+  width: 350px;
+  height: 70px;
+  font-size: 18px;
+  background: #e1e6e2a3;
+  border-radius: 10px;
+  color: #3f4249; }
 
 body {
   height: 100vh;

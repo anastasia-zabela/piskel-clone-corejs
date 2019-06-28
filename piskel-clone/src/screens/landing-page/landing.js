@@ -1,4 +1,5 @@
 import Screenshot from '../../assets/screenshot.jpg';
+import storage from '../../components/storage';
 
 export default class Landing {
   constructor() {
@@ -18,11 +19,15 @@ export default class Landing {
   loadApp() {
     this.landingPage.style.display = 'none';
     this.piskelApp.style.display = 'grid';
+    storage.display.landing = 'none';
+    storage.display.app = 'grid';
   }
 
   backToLanding() {
     this.landingPage.style.display = 'block';
     this.piskelApp.style.display = 'none';
+    storage.display.landing = 'block';
+    storage.display.app = 'none';
   }
 
   handleCreateSpriteButton() {

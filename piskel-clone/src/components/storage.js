@@ -7,7 +7,7 @@ class Storage {
     };
     this.canvas = {
       canvasContain: document.querySelector('.canvas-contain'),
-      canvasElement: document.querySelector('.canvas-contain__drawing-canvas'),
+      canvasElement: null,
       canvasSecondary: null,
       sizeCanvas: 32,
       sizeRect: 25,
@@ -16,11 +16,16 @@ class Storage {
       countOfFrame: 1,
       countOfDataFrame: 0,
       currentFrame: document.querySelector('.frames-contain__wrapper-frame'),
+      numCurrentFrame: 0,
     };
     this.framesData = [
       new Array(this.canvas.sizeCanvas * this.canvas.sizeCanvas).fill(null),
     ];
     this.currentFps = '0';
+    this.display = {
+      landing: 'none',
+      app: 'none',
+    };
   }
 }
 

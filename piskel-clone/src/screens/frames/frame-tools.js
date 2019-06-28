@@ -52,8 +52,10 @@ export default class FrameTools {
     const newFrame = frame;
     newFrame.setAttribute('data-num-frame', storage.frame.countOfDataFrame);
     newFrame.children[1].innerHTML = storage.frame.countOfFrame;
+    this.currentFrame = storage.frame.currentFrame;
     this.currentFrame.classList.remove('selected');
     storage.frame.currentFrame = newFrame;
+    storage.frame.numCurrentFrame = storage.frame.countOfDataFrame;
     this.currentFrame = newFrame;
     this.currentFrame.classList.add('selected');
     this.handleFrameTool(newFrame);
@@ -91,14 +93,12 @@ export default class FrameTools {
       const newCanvas = new Canvas();
       newCanvas.createCanvas(storage.canvas.sizeCanvas);
       currentNum = storage.frame.currentFrame.getAttribute('data-num-frame');
+      storage.frame.numCurrentFrame = currentNum;
       storage.framesData[currentNum].map(elem => drawCanvas(elem));
     } else {
       target.parentNode.removeChild(target);
-      const newCanvas = new Canvas();
-      newCanvas.createCanvas(storage.canvas.sizeCanvas);
-      currentNum = storage.frame.currentFrame.getAttribute('data-num-frame');
-      storage.framesData[currentNum].map(elem => drawCanvas(elem));
     }
+
     storage.frame.countOfFrame -= 1;
     storage.frame.countOfDataFrame -= 1;
     FrameTools.changeNumOfFrames();
@@ -145,8 +145,9 @@ export default class FrameTools {
       storage.frame.currentFrame = event.target.parentNode;
       const newCanvas = new Canvas();
       newCanvas.createCanvas(storage.canvas.sizeCanvas);
-      const currentNum = storage.frame.currentFrame.getAttribute('data-num-frame');
 
+      const currentNum = storage.frame.currentFrame.getAttribute('data-num-frame');
+      storage.frame.numCurrentFrame = currentNum;
       storage.framesData[currentNum].map(elem => drawCanvas(elem));
     }
   }
@@ -245,6 +246,7 @@ export default class FrameTools {
 
         this.currentFrame = overCopy;
         storage.frame.currentFrame = overCopy;
+        storage.frame.numCurrentFrame = storage.frame.currentFrame.getAttribute('data-num-frame');
 
         this.dragElem = null;
       }

@@ -31,3 +31,5 @@
 | Jun 25 | Jun 25 | 3h | refactor: change frame-tools class |
 | Jun 26 | Jun 26 | 4h | feat: add login with google |
 | Jun 26 | Jun 27 | 4h | feat: create landing page |
+| Jun 27 | Jun 27 | 6h | feat: add saved session in localStorage |
+| Jun 28 | Jun 28 | 4h | fix: keyboard shortcuts are adjastable |

@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="google-signin-client_id" content="388355899894-fb95o7d9mp42ca8a8jl4sbl817doous2.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="388355899894-t67r4gm20nqp8caq5s8vfnmsqvni0fke.apps.googleusercontent.com">
     <title><%= htmlWebpackPlugin.options.title %></title>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 <body>
@@ -84,6 +83,8 @@
     </section>
     <section class="wrapper piskel-app" style="display: none">
         <button class="back-to-landing-page-button fas fa-arrow-left"></button>
+        <button id="save" class="user-session-button fas fa-file-invoice"></button>
+        <button id="delete" class="user-session-button fas fa-trash-alt"></button>
         <section class="tools">
             <button class="tools__pen-tool">
                 <span class="fas fa-pen"></span>
@@ -175,8 +176,16 @@
             </div>
         </section>
         <section class="export-contain">
-            <h4>Export</h4>
+            <i class="fas fa-file-export"></i>
             <button class="export-contain__gif">GIF</button>
+            <!-- <button id="render-export-to-gd" class="export-contain__gd">Google Drive</button>
+            <div id="savetodrive-div" class="google-drive">
+                <div class="g-savetodrive"
+                    data-src="//example.com/path/to/myfile.pdf"
+                    data-filename="sprite.pdf"
+                    data-sitename="Piskel clone">
+                </div>
+            </div> -->
         </section>
         <section class="info">
             <div class="info__coords"></div>
@@ -190,63 +199,76 @@
                 <h4>Tool shortcuts</h4>
                 <div>
                     <i class="fas fa-pen"></i>
-                    <button>P</button>
+                    <button data-key-value="pen">P</button>
                     <span>Pen tool</span>
                 </div>
                 <div>
                     <i class="fas fa-fill-drip"></i>
-                    <button>B</button>
+                    <button data-key-value="paintBucket">B</button>
                     <span>Paint bucket tool</span>
                 </div>
                 <div>
                     <i class="fas fa-palette"></i>
-                    <button>A</button>
+                    <button data-key-value="paintSameColor">A</button>
                     <span>Magic bucket tool</span>
                 </div>
                 <div>
                     <i class="fas fa-eye-dropper"></i>
-                    <button>O</button>
+                    <button data-key-value="colorPicker">O</button>
                     <span>Color picker</span>
                 </div>
                 <div>
                     <i class="fas fa-eraser"></i>
-                    <button>E</button>
+                    <button data-key-value="eraser">E</button>
                     <span>Eraser tool</span>
                 </div>
                 <div>
                     <i class="fas fa-slash"></i>
-                    <button>L</button>
+                    <button data-key-value="line">L</button>
                     <span>Line tool</span>
                 </div>
                 <div>
                     <i class="fas fa-vector-square"></i>
-                    <button>R</button>
+                    <button data-key-value="rectangle">R</button>
                     <span>Rectangle tool</span>
                 </div>
                 <div>
                     <i class="far fa-circle"></i>
-                    <button>C</button>
+                    <button data-key-value="circle">C</button>
                     <span>Circle tool</span>
                 </div>
                 <div>
                     <i class="fab fa-delicious"></i>
-                    <button>T</button>
+                    <button data-key-value="dithering">T</button>
                     <span>Dithering tool</span>
                 </div>
                 <div>
                     <i class="fas fa-adjust"></i>
-                    <button>U</button>
+                    <button data-key-value="lighten">U</button>
                     <span>Lighten tool</span>
                 </div>
                 <div>
                     <i class="fas fa-hand-paper"></i>
-                    <button>M</button>
+                    <button data-key-value="move">M</button>
                     <span>Move tool</span>
                 </div>
                 <div>
                     <i class="fas fa-magic"></i>
-                    <button>S</button>
+                    <button data-key-value="shape">S</button>
                     <span>Shape selection</span>
+                </div>
+            </div>
+            <div class="keyboard-contain__modal--session">
+                <h4>Session shortcuts</h4>
+                <div>
+                    <i class="fas fa-file-invoice"></i>
+                    <button id="width-button">Shift + S</button>
+                    <span>Save session</span>
+                </div>
+                <div>
+                    <i class="fas fa-trash-alt"></i>
+                    <button id="width-button">Shift + D</button>
+                    <span>Delete session</span>
                 </div>
             </div>
         </article>
@@ -255,9 +277,12 @@
         <article class="authorization-window">
             <h3>Sing in</h3>
             <div class="close"></div>
-            <!-- <div class="g-signin2 google-login" data-onsuccess="onSignIn"></div> -->
+            <div class="g-signin2 google-login" data-onsuccess="onSignIn"></div>
         </article>
     </section>
+    <section class="session-message">
+    </section>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script>
         function onSignIn(googleUser) {
             const profile = googleUser.getBasicProfile();

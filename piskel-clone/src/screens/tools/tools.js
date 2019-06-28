@@ -9,81 +9,81 @@ class Tools {
     this.colorPicker = document.querySelector('.tools__color-picker-tool');
     this.eraser = document.querySelector('.tools__eraser-tool');
     this.line = document.querySelector('.tools__line-tool');
-    this.rect = document.querySelector('.tools__rectangle-tool');
+    this.rectangle = document.querySelector('.tools__rectangle-tool');
     this.circle = document.querySelector('.tools__circle-tool');
     this.dithering = document.querySelector('.tools__dithering-tool');
     this.lighten = document.querySelector('.tools__lighten-tool');
     this.move = document.querySelector('.tools__move-tool');
     this.shape = document.querySelector('.tools__shape-selection-tool');
     this.currentTool = null;
+    this.colorTools = '#acc7cd';
   }
 
   chooseTools(event) {
     let { target } = event;
     while (target !== this.tools) {
       if (target.tagName === 'BUTTON') {
-        if (storage.currentTool !== null) { this.currentTool.style.background = ''; }
-        const colorTools = '#acc7cd';
+        if (storage.currentTool !== null) { this[storage.currentTool].style.background = ''; }
         switch (target) {
           case this.pen:
             storage.currentTool = 'pen';
             this.currentTool = this.pen;
-            this.pen.style.background = colorTools;
+            this.pen.style.background = this.colorTools;
             break;
           case this.paintBucket:
             storage.currentTool = 'paintBucket';
             this.currentTool = this.paintBucket;
-            this.paintBucket.style.background = colorTools;
+            this.paintBucket.style.background = this.colorTools;
             break;
           case this.paintSameColor:
             storage.currentTool = 'paintSameColor';
             this.currentTool = this.paintSameColor;
-            this.paintSameColor.style.background = colorTools;
+            this.paintSameColor.style.background = this.colorTools;
             break;
           case this.colorPicker:
             storage.currentTool = 'colorPicker';
             this.currentTool = this.colorPicker;
-            this.colorPicker.style.background = colorTools;
+            this.colorPicker.style.background = this.colorTools;
             break;
           case this.eraser:
             storage.currentTool = 'eraser';
             this.currentTool = this.eraser;
-            this.eraser.style.background = colorTools;
+            this.eraser.style.background = this.colorTools;
             break;
           case this.line:
             storage.currentTool = 'line';
             this.currentTool = this.line;
-            this.line.style.background = colorTools;
+            this.line.style.background = this.colorTools;
             break;
-          case this.rect:
+          case this.rectangle:
             storage.currentTool = 'rectangle';
-            this.currentTool = this.rect;
-            this.rect.style.background = colorTools;
+            this.currentTool = this.rectangle;
+            this.rectangle.style.background = this.colorTools;
             break;
           case this.circle:
             storage.currentTool = 'circle';
             this.currentTool = this.circle;
-            this.circle.style.background = colorTools;
+            this.circle.style.background = this.colorTools;
             break;
           case this.dithering:
             storage.currentTool = 'dithering';
             this.currentTool = this.dithering;
-            this.dithering.style.background = colorTools;
+            this.dithering.style.background = this.colorTools;
             break;
           case this.lighten:
             storage.currentTool = 'lighten';
             this.currentTool = this.lighten;
-            this.lighten.style.background = colorTools;
+            this.lighten.style.background = this.colorTools;
             break;
           case this.move:
             storage.currentTool = 'move';
             this.currentTool = this.move;
-            this.move.style.background = colorTools;
+            this.move.style.background = this.colorTools;
             break;
           case this.shape:
             storage.currentTool = 'shape';
             this.currentTool = this.shape;
-            this.shape.style.background = colorTools;
+            this.shape.style.background = this.colorTools;
             break;
           default:
             break;

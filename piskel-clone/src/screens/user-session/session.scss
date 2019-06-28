@@ -1,0 +1,34 @@
+.user-session-button {
+    position: absolute;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    background: #d6b87c;
+    border: 2px solid #3f4249;
+    color: #3f4249;
+
+    &:hover {
+      cursor: pointer;
+      background: #e3decb;
+    }
+}
+
+#delete {
+    top: 140px;
+}
+
+.session-message {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 70px;
+    font-size: 18px;
+    background: #e1e6e2a3;
+    border-radius: 10px;
+    color: #3f4249;
+}

@@ -16,12 +16,14 @@ class Canvas {
     this.canvasCopy = document.querySelector('.canvas-contain__drawing-canvas');
     this.canvasSecondary = document.querySelector('.canvas-contain__secondary-canvas');
     this.canvasContain = document.querySelector('.canvas-contain');
+    this.canvasSizeButtons = document.querySelector('.canvas-size');
     this.canvas = this.canvasCopy.cloneNode();
     this.sizeCanvas = pixels;
     this.sizeRect = Math.floor(800 / this.sizeCanvas);
+    this.infoCoords = new InfoCoords();
   }
 
-  static addEventsOnCanvas(canvas) {
+  addEventsOnCanvas(canvas) {
     addPenTool(canvas);
     addLineTool(canvas);
     addEraserTool(canvas);
@@ -32,8 +34,7 @@ class Canvas {
     addCircleTool(canvas);
     addDitheringTool(canvas);
     addLightenTool(canvas);
-    const infoCoords = new InfoCoords();
-    infoCoords.showCoordsOfPixel(canvas);
+    this.infoCoords.showCoordsOfPixel(canvas);
   }
 
   createCanvas(sizeCanvas) {
@@ -48,7 +49,7 @@ class Canvas {
     storage.canvas.canvasElement = canvas;
     storage.canvas.sizeRect = newCanvas.sizeRect;
     storage.canvas.sizeCanvas = sizeCanvas;
-    Canvas.addEventsOnCanvas(canvas);
+    this.addEventsOnCanvas(canvas);
     this.canvasContain.replaceChild(canvas, oldCanvas);
   }
 }

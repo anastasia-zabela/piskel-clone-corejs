@@ -1,7 +1,9 @@
 .export-contain {
     grid-area: 3 / 4 / 4 / 5;
     width: 350px;
-    height: 200px;
+    height: 55px;
+    display: grid;
+    grid-template: 1fr / 65px 1fr 1fr 1fr;
     margin: auto;
     background: #3f4249;
     border: 2px solid #d6b87c;
@@ -13,11 +15,31 @@
         color: #d6b87c;
     }
 
-    & button {
+    & i {
+        color: #e3decb;
         margin: auto;
+        font-size: 32px;
+    }
+
+    & button {
+        height: 40px;
         background: #3f4249;
         color: #acc7cd;
         border: 2px solid #acc7cd;
         cursor: pointer;
     }
+
+    &__gif {
+        margin: auto;
+        width: 50px;
+    }
+
+    &__gd {
+        margin: auto 0;
+        width: 60px;
+    }
+}
+
+.google-drive {
+    margin: auto 0;
 }
