@@ -47,8 +47,6 @@ export default class FrameTools {
   }
 
   createNewFrame(frame) {
-    storage.framesData[storage.frame.countOfDataFrame] = new Array(storage.canvas.sizeCanvas
-      * storage.canvas.sizeCanvas).fill(null);
     const newFrame = frame;
     newFrame.setAttribute('data-num-frame', storage.frame.countOfDataFrame);
     newFrame.children[1].innerHTML = storage.frame.countOfFrame;
@@ -66,6 +64,8 @@ export default class FrameTools {
     storage.frame.countOfDataFrame += 1;
     storage.frame.countOfFrame += 1;
     let newFrame = new Frame(storage.frame.countOfDataFrame, storage.frame.countOfFrame);
+    storage.framesData[storage.frame.countOfDataFrame] = new Array(storage.canvas.sizeCanvas
+        * storage.canvas.sizeCanvas).fill(null);
     const newCanvas = new Canvas();
     newCanvas.createCanvas(storage.canvas.sizeCanvas);
     newFrame = this.createNewFrame(newFrame.frameContain);
@@ -123,14 +123,15 @@ export default class FrameTools {
     const newFrame = target.cloneNode(true);
     const ctxNewFrame = newFrame.children[0].getContext('2d');
     ctxNewFrame.drawImage(storage.canvas.canvasElement, 0, 0, 150, 150);
-    newFrame.children[4].addEventListener('click', FrameTools.copyFrame);
+    newFrame.children[4].addEventListener('click', this.copyFrame);
 
     this.createNewFrame(newFrame);
-    storage.framesData[storage.frame.countOfDataFrame] = new Array(storage.canvas.sizeCanvas
+    const newFramesData = new Array(storage.canvas.sizeCanvas
       * storage.canvas.sizeCanvas).fill(null).map((elem, i) => {
       const element = storage.framesData[currentNum][i];
       return element;
     });
+    storage.framesData.splice(currentNum, 0, newFramesData);
 
     target.insertAdjacentElement('afterend', newFrame);
     FrameTools.changeNumOfFrames();
