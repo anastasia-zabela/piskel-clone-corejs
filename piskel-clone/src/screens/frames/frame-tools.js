@@ -3,12 +3,17 @@ import Canvas from '../canvas/canvas';
 import Frame from './frames';
 import createPreviewAnimation from '../preview/preview-animation';
 import drawCanvas from '../../components/draw-canvas';
+import Background from '../../assets/background-canvas.jpg';
 
 export default class FrameTools {
   constructor() {
     this.currentFrame = document.querySelector('.frames-contain__wrapper-frame');
     this.addFrameButton = document.querySelector('.frames-contain__frame-add');
     this.dragElem = null;
+  }
+
+  addBackgroundFrame() {
+    this.currentFrame.children[0].style.background = `url(${Background})`;
   }
 
   static changeNum(e, i) {

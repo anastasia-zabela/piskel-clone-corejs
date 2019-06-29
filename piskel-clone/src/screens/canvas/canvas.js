@@ -10,6 +10,7 @@ import addCircleTool from '../tools/circle-tool';
 import addDitheringTool from '../tools/dithering-tool';
 import addLightenTool from '../tools/lighten-tool';
 import InfoCoords from '../info-field/info';
+import Background from '../../assets/background-canvas.jpg';
 
 class Canvas {
   constructor(pixels) {
@@ -37,6 +38,11 @@ class Canvas {
     this.infoCoords.showCoordsOfPixel(canvas);
   }
 
+  static loadBackground(canvas) {
+    // eslint-disable-next-line no-param-reassign
+    canvas.style.background = `url(${Background})`;
+  }
+
   createCanvas(sizeCanvas) {
     const oldCanvas = document.querySelector('.canvas-contain__drawing-canvas');
     const newCanvas = new Canvas(sizeCanvas);
@@ -50,6 +56,7 @@ class Canvas {
     storage.canvas.sizeRect = newCanvas.sizeRect;
     storage.canvas.sizeCanvas = sizeCanvas;
     this.addEventsOnCanvas(canvas);
+    Canvas.loadBackground(canvas);
     this.canvasContain.replaceChild(canvas, oldCanvas);
   }
 }

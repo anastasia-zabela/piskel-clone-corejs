@@ -1,10 +1,16 @@
 import storage from '../../components/storage';
 import createPreviewAnimation from './preview-animation';
+import Background from '../../assets/background-canvas.jpg';
 
 export default class FPS {
   constructor() {
+    this.preview = document.querySelector('.preview-contain__preview');
     this.sliderFps = document.querySelector('.preview-contain__fps-block--fps-slider');
     this.valueFps = document.querySelector('.fps-value');
+  }
+
+  addBackgroundPreview() {
+    this.preview.style.background = `url(${Background})`;
   }
 
   changeFpsValue() {

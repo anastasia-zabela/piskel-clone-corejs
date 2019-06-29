@@ -1,11 +1,10 @@
 import storage from '../../components/storage';
 
+const preview = document.querySelector('.preview-contain__preview');
+const ctxPreview = preview.getContext('2d');
+const sliderFps = document.querySelector('.preview-contain__fps-block--fps-slider');
 
 async function createPreviewAnimation(fps) {
-  const preview = document.querySelector('.preview-contain__preview');
-  const ctxPreview = preview.getContext('2d');
-  const sliderFps = document.querySelector('.preview-contain__fps-block--fps-slider');
-
   const ms = 1000 / fps;
   let frames = document.getElementsByClassName('frames-contain__wrapper-frame');
   frames = Array.prototype.slice.call(frames);

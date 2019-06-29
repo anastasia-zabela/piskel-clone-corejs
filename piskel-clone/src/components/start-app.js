@@ -33,10 +33,10 @@ function checkLocalStorage() {
 
 function start() {
   frameTools.handleAddFrameButton();
+  frameTools.addBackgroundFrame();
   tools.handleEventsTools();
   sliderFps.handleSliderFPS();
-  createPreviewAnimation(storage.currentFps);
-  handleFullscreenMode();
+  sliderFps.addBackgroundPreview();
   canvasSize.handleCanvasSizeButton();
   frameTools.handleFrameTool(storage.frame.currentFrame);
   colors.handleColorsChange();
@@ -46,6 +46,8 @@ function start() {
   landing.loadImage();
   landing.handleCreateSpriteButton();
   session.handleClickSaveButton();
+  createPreviewAnimation(storage.currentFps);
+  handleFullscreenMode();
   checkLocalStorage();
 }
 
