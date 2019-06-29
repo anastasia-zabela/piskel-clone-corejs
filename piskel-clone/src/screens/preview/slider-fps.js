@@ -17,7 +17,38 @@ export default class FPS {
     }
   }
 
+  decreaseValueFps() {
+    const currentFps = this.sliderFps.value;
+    if (currentFps > 0) {
+      this.sliderFps.value = currentFps - 1;
+      this.changeFpsValue();
+    }
+  }
+
+  increaseValueFps() {
+    const currentFps = this.sliderFps.value;
+    if (currentFps < 24) {
+      this.sliderFps.value = +currentFps + 1;
+      this.changeFpsValue();
+    }
+  }
+
+  handleKeyChangeFps(e) {
+    const { code } = e;
+    switch (code) {
+      case 'KeyQ':
+        this.decreaseValueFps();
+        break;
+      case 'KeyW':
+        this.increaseValueFps();
+        break;
+      default:
+        break;
+    }
+  }
+
   handleSliderFPS() {
     this.sliderFps.addEventListener('mousemove', this.changeFpsValue.bind(this));
+    document.addEventListener('keydown', this.handleKeyChangeFps.bind(this));
   }
 }

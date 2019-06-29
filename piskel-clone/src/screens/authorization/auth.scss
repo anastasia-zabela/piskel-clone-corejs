@@ -29,11 +29,19 @@
         display: flex;
         justify-content: center;
     }
+
+    & .close {
+        &::before {
+            background-color: #3f4249;
+        }
+
+        &::after {
+            background-color: #3f4249;
+        }
+    }
 }
 
-%close-color {
-    background-color: #3f4249;
-}
+
 
 .header__profile {
     width: 200px;

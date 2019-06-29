@@ -33,3 +33,4 @@
 | Jun 26 | Jun 27 | 4h | feat: create landing page |
 | Jun 27 | Jun 27 | 6h | feat: add saved session in localStorage |
 | Jun 28 | Jun 28 | 4h | fix: keyboard shortcuts are adjastable |
+| Jun 29 | Jun 29 | 1h | feat: add more shortcuts |

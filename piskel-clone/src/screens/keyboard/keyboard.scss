@@ -29,7 +29,7 @@
     &__modal {
         position: relative;
         display: grid;
-        grid-template: 100px 1fr / 1fr 1fr;
+        grid-template: 100px 195px 1fr 1fr / 1.5fr 1fr;
         width: 1200px;
         height: 800px;
         background: #3f4249;
@@ -47,7 +47,6 @@
         }
 
         %shortcuts {
-            margin-left: 25px;
             font-size: 25px;
             color: #e1e6e2;
             display: grid;
@@ -58,6 +57,8 @@
             & h4 {
                 margin: 0;
                 grid-area: 1 / 1 / 2 / -1;
+                display: flex;
+                align-items: center;
             } 
             
             & div {
@@ -97,7 +98,9 @@
 
         &--tool {
             @extend %shortcuts;
-            grid-template: repeat(10, 50px) / 1fr 1fr;
+            grid-area: 2 / 1 / 4 / 2;
+            grid-template: repeat(7, 50px) / 1fr 1fr;
+            margin-left: 50px;
             
             & div {
                 width: 300px;
@@ -107,14 +110,28 @@
         &--session {
             @extend %shortcuts;
             grid-template: repeat(3, 50px) / 1fr;
+            margin-left: 25px;
 
             & #width-button {
                 width: 115px;
             }
         }
+
+        &--preview {
+            @extend %shortcuts;
+            grid-template: repeat(4, 50px) / 1fr;
+            margin-left: 25px;
+        }
+    }
+
+    & .close {
+        &::before {
+            background-color: #e1e6e2;
+        }
+
+        &::after {
+            background-color: #e1e6e2;
+        }
     }
 }
 
-%close-color {
-    background-color: #e1e6e2;
-}

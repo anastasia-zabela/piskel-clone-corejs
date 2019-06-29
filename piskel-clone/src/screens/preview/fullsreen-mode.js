@@ -7,8 +7,20 @@ function runFullscreenMode() {
   preview.width = preview.height;
 }
 
+function handleKeyFullscreen(e) {
+  const { code } = e;
+  switch (code) {
+    case 'KeyF':
+      runFullscreenMode();
+      break;
+    default:
+      break;
+  }
+}
+
 function handleFullscreenMode() {
   fullscreenButton.addEventListener('click', runFullscreenMode);
+  document.addEventListener('keydown', handleKeyFullscreen);
 }
 
 export default handleFullscreenMode;

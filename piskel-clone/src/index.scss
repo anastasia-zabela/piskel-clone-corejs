@@ -100,7 +100,6 @@ button {
     left: 15px;
     height: 33px;
     width: 2px;
-    // background-color: #e1e6e2;
 }
 
 .close {
@@ -111,13 +110,11 @@ button {
     height: 30px;
 
     &::before {
-        @extend %close-color;
         @extend %close-line;
         transform: rotate(45deg);
     }
 
     &::after {
-        @extend %close-color;
         @extend %close-line;
         transform: rotate(-45deg);
     }
