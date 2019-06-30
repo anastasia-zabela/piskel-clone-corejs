@@ -28,7 +28,7 @@ describe('Keyboard', () => {
     const e = {
       code: 'KeyP',
     };
-    keyboard.handleKeyDown(e);
+    keyboard.handleKeyDownTools(e);
     const result = keyboard.currentTool;
 
     expect(result).toBe(keyboard.pen);

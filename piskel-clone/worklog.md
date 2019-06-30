@@ -1,6 +1,6 @@
 | Start time | End time | Time spent | Feature |
 |------------|----------|------------|---------|
-| Jun 4 | Jun 4 | 2h | base structure of the project |
+| Jun 4 | Jun 4 | 2h 30min | base structure of the project |
 | Jun 5 | Jun 5 | 1h | add template |
 | Jun 5 | Jun 5 | 1h | create function for choose tools |
 | Jun 5 | Jun 5 | 3h | add pen tool |
@@ -37,3 +37,5 @@
 | Jun 29 | Jun 29 | 30min | feat: add background canvas, frames and preview |
 | Jun 30 | Jun 30 | 2h | feat: add animation example |
 | Jun 30 | Jun 30 | 15min | fix: colorPicker save color to hex |
+| Jun 30 | Jun 30 | 15min | feat: add more tooltips |
+|Total|--| 80h | --|

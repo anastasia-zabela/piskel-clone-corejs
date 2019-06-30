@@ -12,6 +12,11 @@
         outline: none;
         border: none;
         background: #3f4249;
+
+        &:hover {
+            cursor: pointer;
+            background: #acc7cd;
+        }
     }
 
     &__arrow {

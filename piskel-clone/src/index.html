@@ -83,9 +83,9 @@
         </footer>
     </section>
     <section class="wrapper piskel-app" style="display: none">
-        <button class="back-to-landing-page-button fas fa-arrow-left"></button>
-        <button id="save" class="user-session-button fas fa-file-invoice"></button>
-        <button id="delete" class="user-session-button fas fa-trash-alt"></button>
+        <button class="back-to-landing-page-button fas fa-arrow-left" title="Back to landing page"></button>
+        <button id="save" class="user-session-button fas fa-file-invoice" title="Save current session"></button>
+        <button id="delete" class="user-session-button fas fa-trash-alt" title="Delete current session"></button>
         <section class="tools">
             <button class="tools__pen-tool">
                 <span class="fas fa-pen"></span>
@@ -142,7 +142,7 @@
             <div class="colors__arrow fas fa-level-up-alt"></div>
         </section>
         <section class="keyboard-modal">
-            <button class="keyboard-modal--button far fa-keyboard"></button>
+            <button class="keyboard-modal--button far fa-keyboard" title="Keyboard shortcuts"></button>
         </section>
         <section class="frames-contain">
             <div class="frames-contain__wrapper">
@@ -153,7 +153,7 @@
                     <button class="frames-contain__tool--move-tool"><span class="fas fa-arrows-alt"></span></button>
                     <button class="frames-contain__tool--copy-tool"><span class="fas fa-clone"></span></button>
                 </div>
-                <button class="frames-contain__frame-add fas fa-plus"></button>
+                <button class="frames-contain__frame-add fas fa-plus" title="Add new frame"></button>
             </div>
         </section>
         <section class="canvas-contain">
@@ -161,9 +161,9 @@
             <canvas class="canvas-contain__secondary-canvas" width="800px" height="800px"></canvas>
         </section>
         <section class="canvas-size">
-            <button class="selected">32</button>
-            <button>64</button>
-            <button>128</button>
+            <button class="selected" title="Change canvas size to 32x32">32</button>
+            <button title="Change canvas size to 64x64">64</button>
+            <button title="Change canvas size to 128x128">128</button>
         </section>
         <section class="preview-contain">
             <div class="preview-contain__wrapper">
@@ -178,7 +178,7 @@
         </section>
         <section class="export-contain">
             <i class="fas fa-file-export"></i>
-            <button class="export-contain__gif">GIF</button>
+            <button class="export-contain__gif" title="Export to .gif">GIF</button>
             <!-- <button id="render-export-to-gd" class="export-contain__gd">Google Drive</button>
             <div id="savetodrive-div" class="google-drive">
                 <div class="g-savetodrive"

@@ -43,6 +43,9 @@
     outline: none;
     border: none;
     background: #3f4249; }
+    .colors input:hover {
+      cursor: pointer;
+      background: #acc7cd; }
   .colors__arrow {
     position: absolute;
     bottom: -15px;
