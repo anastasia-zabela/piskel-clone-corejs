@@ -8,8 +8,9 @@ function chooseColor(e) {
     const ctx = this.getContext('2d');
     const imgData = ctx.getImageData(e.offsetX, e.offsetY, 1, 1);
     const [r, g, b] = imgData.data;
-    storage.colors.primaryColor = `rgb(${r}, ${g}, ${b})`;
-    primaryColorField.value = `#${fullColorHex(r, g, b)}`;
+    const hexColor = `#${fullColorHex(r, g, b)}`;
+    storage.colors.primaryColor = hexColor;
+    primaryColorField.value = hexColor;
   }
 }
 

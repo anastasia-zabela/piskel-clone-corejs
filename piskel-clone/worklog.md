@@ -36,3 +36,4 @@
 | Jun 29 | Jun 29 | 1h | feat: add more shortcuts |
 | Jun 29 | Jun 29 | 30min | feat: add background canvas, frames and preview |
 | Jun 30 | Jun 30 | 2h | feat: add animation example |
+| Jun 30 | Jun 30 | 15min | fix: colorPicker save color to hex |
