@@ -43,8 +43,9 @@ function start() {
   keyboard.handleKeyboardModalWindow();
   exp.handleExports();
   auth.handleSingInButton();
-  landing.loadImage();
+  landing.loadScreenshot();
   landing.handleCreateSpriteButton();
+  landing.loadAnimations();
   session.handleClickSaveButton();
   createPreviewAnimation(storage.currentFps);
   handleFullscreenMode();

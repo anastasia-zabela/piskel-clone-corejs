@@ -44,10 +44,19 @@
     }
 
     &__animation-example {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         height: 400px;
         text-transform: uppercase;
         background: #686b70;
         color: #e1e6e2;
+
+        & h2 {
+            width: 120px;
+            text-align: right;
+            margin: 0 auto;
+        }
     }
 
     &__functionality {
@@ -156,4 +165,10 @@
     &:hover {
         background: #e3decb;
     }
+}
+
+.animations {
+    display: grid;
+    grid-template: 1fr / repeat(6, 1fr);
+    grid-gap: 40px;
 }

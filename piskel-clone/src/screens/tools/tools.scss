@@ -31,5 +31,10 @@
             @extend %tooltip;
             width: 140px; 
         }
+
+        &:hover {
+            cursor: pointer;
+            background: #d6b87c;
+        }
     }
 }

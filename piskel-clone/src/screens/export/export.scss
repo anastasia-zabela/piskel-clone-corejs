@@ -1,10 +1,10 @@
 .export-contain {
     grid-area: 3 / 4 / 4 / 5;
-    width: 350px;
+    width: 200px;
     height: 55px;
     display: grid;
-    grid-template: 1fr / 65px 1fr 1fr 1fr;
-    margin: auto;
+    grid-template: 1fr / 65px 1fr;
+    margin: 240px 0 0 45px;
     background: #3f4249;
     border: 2px solid #d6b87c;
 

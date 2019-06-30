@@ -26,6 +26,9 @@
     color: #3f4249; }
     .tools button div {
       width: 140px; }
+    .tools button:hover {
+      cursor: pointer;
+      background: #d6b87c; }
 
 .colors {
   position: relative;
@@ -73,6 +76,7 @@
   cursor: pointer; }
 
 .frames-contain {
+  position: relative;
   grid-area: 1 / 2 / 4 / 3;
   display: flex;
   justify-content: center; }
@@ -82,15 +86,15 @@
     align-items: center;
     width: 200px;
     overflow-y: scroll;
-    border: 2px solid #ccdee2;
-    border-top: none;
-    border-right: none; }
+    border-left: 2px solid #ccdee2; }
   .frames-contain__wrapper::-webkit-scrollbar-track {
-    background: #ccdee2; }
+    background: rgba(0, 0, 0, 0);
+    border-left: 2px solid #acc7cd; }
   .frames-contain__wrapper::-webkit-scrollbar {
     width: 10px; }
   .frames-contain__wrapper::-webkit-scrollbar-thumb {
-    background-color: #3f4249; }
+    background-color: #3f4249;
+    border-radius: 20px; }
   .frames-contain__wrapper-frame {
     position: relative;
     width: 150px;
@@ -119,10 +123,13 @@
     min-height: 50px;
     margin-bottom: 20px;
     font-size: 20px;
-    color: #686b70;
+    color: #3f4249;
     background: #acc7cd;
-    border: none;
+    border: 2px solid #3f4249;
     border-radius: 25px; }
+    .frames-contain__frame-add:hover {
+      cursor: pointer;
+      background: #e1e6e2; }
 
 .selected {
   border: 4px solid #d6b87c; }
@@ -250,11 +257,14 @@
   background: #00000069; }
   .keyboard-contain__modal {
     position: relative;
+    display: grid;
+    grid-template: 100px 195px 1fr 1fr / 1.5fr 1fr;
     width: 1200px;
     height: 800px;
     background: #3f4249;
     border: #d6b87c 3px solid; }
     .keyboard-contain__modal h3 {
+      grid-area: 1 / 1 / 2 / -1;
       margin: 0;
       height: 70px;
       display: flex;
@@ -262,26 +272,25 @@
       align-items: center;
       font-size: 30px;
       color: #d6b87c; }
-    .keyboard-contain__modal--tool {
+    .keyboard-contain__modal .keyboard-contain__modal--tool, .keyboard-contain__modal .keyboard-contain__modal--session, .keyboard-contain__modal .keyboard-contain__modal--preview {
+      font-size: 25px;
+      color: #e1e6e2;
       display: grid;
-      grid-template: repeat(10, 50px)/1fr 1fr;
       grid-gap: 15px;
       grid-auto-flow: column;
-      margin: 0 25px;
-      width: 350px;
-      font-size: 25px;
-      color: #e1e6e2; }
-      .keyboard-contain__modal--tool h4 {
+      width: 350px; }
+      .keyboard-contain__modal .keyboard-contain__modal--tool h4, .keyboard-contain__modal .keyboard-contain__modal--session h4, .keyboard-contain__modal .keyboard-contain__modal--preview h4 {
         margin: 0;
-        grid-area: 1 / 1 / 2 / -1; }
-      .keyboard-contain__modal--tool div {
+        grid-area: 1 / 1 / 2 / -1;
+        display: flex;
+        align-items: center; }
+      .keyboard-contain__modal .keyboard-contain__modal--tool div, .keyboard-contain__modal .keyboard-contain__modal--session div, .keyboard-contain__modal .keyboard-contain__modal--preview div {
         display: flex;
         align-items: center;
         margin-bottom: 6px;
-        width: 300px;
         height: 50px;
         border: 1px solid #3f4249; }
-      .keyboard-contain__modal--tool i {
+      .keyboard-contain__modal .keyboard-contain__modal--tool i, .keyboard-contain__modal .keyboard-contain__modal--session i, .keyboard-contain__modal .keyboard-contain__modal--preview i {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -290,7 +299,7 @@
         height: 50px;
         background: #d6b87c;
         color: #3f4249; }
-      .keyboard-contain__modal--tool button {
+      .keyboard-contain__modal .keyboard-contain__modal--tool button, .keyboard-contain__modal .keyboard-contain__modal--session button, .keyboard-contain__modal .keyboard-contain__modal--preview button {
         width: 50px;
         height: 50px;
         font-size: 25px;
@@ -298,25 +307,41 @@
         color: #acc7cd;
         border: 3px solid #acc7cd;
         cursor: pointer; }
-      .keyboard-contain__modal--tool span {
+      .keyboard-contain__modal .keyboard-contain__modal--tool span, .keyboard-contain__modal .keyboard-contain__modal--session span, .keyboard-contain__modal .keyboard-contain__modal--preview span {
         margin-left: 15px;
         font-size: 18px; }
-
-.close::before, .close::after {
-  background-color: #e1e6e2; }
+    .keyboard-contain__modal--tool {
+      grid-area: 2 / 1 / 4 / 2;
+      grid-template: repeat(7, 50px)/1fr 1fr;
+      margin-left: 50px; }
+      .keyboard-contain__modal--tool div {
+        width: 300px; }
+    .keyboard-contain__modal--session {
+      grid-template: repeat(3, 50px)/1fr;
+      margin-left: 25px; }
+      .keyboard-contain__modal--session #width-button {
+        width: 115px; }
+    .keyboard-contain__modal--preview {
+      grid-template: repeat(4, 50px)/1fr;
+      margin-left: 25px; }
+  .keyboard-contain .close::before {
+    background-color: #e1e6e2; }
+  .keyboard-contain .close::after {
+    background-color: #e1e6e2; }
 
 .info {
   grid-area: 4 / 4 / 5 / 5;
   margin: 15px;
+  margin-left: 45px;
   color: #d6b87c; }
 
 .export-contain {
   grid-area: 3 / 4 / 4 / 5;
-  width: 350px;
+  width: 200px;
   height: 55px;
   display: grid;
-  grid-template: 1fr / 65px 1fr 1fr 1fr;
-  margin: auto;
+  grid-template: 1fr / 65px 1fr;
+  margin: 240px 0 0 45px;
   background: #3f4249;
   border: 2px solid #d6b87c; }
   .export-contain h4 {
@@ -369,9 +394,10 @@
   .authorization .google-login {
     display: flex;
     justify-content: center; }
-
-.close::before, .close::after {
-  background-color: #3f4249; }
+  .authorization .close::before {
+    background-color: #3f4249; }
+  .authorization .close::after {
+    background-color: #3f4249; }
 
 .header__profile {
   width: 200px;
@@ -416,10 +442,17 @@
       width: 900px;
       margin: auto; }
   .landing-page__animation-example {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 400px;
     text-transform: uppercase;
     background: #686b70;
     color: #e1e6e2; }
+    .landing-page__animation-example h2 {
+      width: 120px;
+      text-align: right;
+      margin: 0 auto; }
   .landing-page__functionality {
     background: #e3decb; }
     .landing-page__functionality li {
@@ -495,6 +528,11 @@
   .back-to-landing-page-button:hover {
     background: #e3decb; }
 
+.animations {
+  display: grid;
+  grid-template: 1fr/repeat(6, 1fr);
+  grid-gap: 40px; }
+
 .user-session-button {
   position: absolute;
   right: 30px;
@@ -533,7 +571,7 @@ body {
 
 .wrapper {
   display: grid;
-  grid-template: 200px 1fr 1fr 50px / 50px 1fr 800px 1fr;
+  grid-template: 200px 1fr 1fr 50px / 100px 1fr 800px 1fr;
   padding: 30px 100px;
   height: 850px;
   background: #686b70; }

@@ -58,7 +58,7 @@ export default class FrameTools {
     this.currentFrame = storage.frame.currentFrame;
     this.currentFrame.classList.remove('selected');
     storage.frame.currentFrame = newFrame;
-    storage.frame.numCurrentFrame = storage.frame.countOfDataFrame;
+    window.console.log(storage.frame.numCurrentFrame);
     this.currentFrame = newFrame;
     this.currentFrame.classList.add('selected');
     this.handleFrameTool(newFrame);
@@ -68,6 +68,7 @@ export default class FrameTools {
   addNewFrame() {
     storage.frame.countOfDataFrame += 1;
     storage.frame.countOfFrame += 1;
+    storage.frame.numCurrentFrame = storage.frame.countOfDataFrame;
     let newFrame = new Frame(storage.frame.countOfDataFrame, storage.frame.countOfFrame);
     storage.framesData[storage.frame.countOfDataFrame] = new Array(storage.canvas.sizeCanvas
         * storage.canvas.sizeCanvas).fill(null);
@@ -104,6 +105,8 @@ export default class FrameTools {
       target.parentNode.removeChild(target);
     }
 
+    window.console.log(storage.frame.numCurrentFrame);
+
     storage.frame.countOfFrame -= 1;
     storage.frame.countOfDataFrame -= 1;
     FrameTools.changeNumOfFrames();
@@ -124,6 +127,7 @@ export default class FrameTools {
 
     const currentNum = target.getAttribute('data-num-frame');
     storage.framesData[currentNum].map(elem => drawCanvas(elem));
+    storage.frame.numCurrentFrame = currentNum;
 
     const newFrame = target.cloneNode(true);
     const ctxNewFrame = newFrame.children[0].getContext('2d');
@@ -141,6 +145,7 @@ export default class FrameTools {
     target.insertAdjacentElement('afterend', newFrame);
     FrameTools.changeNumOfFrames();
     createPreviewAnimation(storage.currentFps);
+    window.console.log(storage.frame.numCurrentFrame);
   }
 
   selectFrame(event) {
@@ -155,6 +160,7 @@ export default class FrameTools {
       const currentNum = storage.frame.currentFrame.getAttribute('data-num-frame');
       storage.frame.numCurrentFrame = currentNum;
       storage.framesData[currentNum].map(elem => drawCanvas(elem));
+      window.console.log(storage.frame.numCurrentFrame);
     }
   }
 
