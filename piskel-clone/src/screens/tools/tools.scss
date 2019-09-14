@@ -1,0 +1,40 @@
+%tooltip {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 120%;
+    height: 48px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+    background: #acc7cd;
+    border-radius: 10px;
+}
+
+.tools {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100px;
+    margin: auto 0;
+
+    & button {
+        position: relative;
+        height: 50px;
+        width: 50px;
+        font-size: 25px;
+        border: 1px solid #686b70;
+        background: #e3decb;
+        color: #3f4249;
+
+        & div {
+            @extend %tooltip;
+            width: 140px; 
+        }
+
+        &:hover {
+            cursor: pointer;
+            background: #d6b87c;
+        }
+    }
+}

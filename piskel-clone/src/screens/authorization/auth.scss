@@ -1,0 +1,59 @@
+.authorization {
+    z-index: 50;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: #3f424973;
+
+    &-window {
+        position: relative;
+        width: 500px;
+        height: 300px;
+        background: #e1e6e2;
+        border: 3px solid #acc7cd;
+    }
+
+    & h3 {
+        margin: 20px 0;
+        text-align: center;
+        font-size: 30px;
+        color: #3f4249;
+    }
+
+    & .google-login {
+        display: flex;
+        justify-content: center;
+    }
+
+    & .close {
+        &::before {
+            background-color: #3f4249;
+        }
+
+        &::after {
+            background-color: #3f4249;
+        }
+    }
+}
+
+
+
+.header__profile {
+    width: 200px;
+    height: 35px;
+    display: flex;
+    justify-content: flex-start;
+    background: #acc7cd;
+    border: 2px solid #e1e6e2;
+    color: #3f4249;
+
+    & img {
+        width: 25px;
+        margin-right: 15px;
+    }
+}
