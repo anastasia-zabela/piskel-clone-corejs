@@ -117,7 +117,8 @@
     top: 0;
     right: 0; }
   .frames-contain__tool--move-tool {
-    bottom: 0; }
+    bottom: 0;
+    left: 0; }
   .frames-contain__tool--copy-tool {
     bottom: 0;
     right: 0; }
@@ -425,9 +426,19 @@
       width: 400px;
       height: 300px;
       margin: auto; }
+      @media screen and (max-width: 480px) {
+        .landing-page__piskel-app div {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 100vw; } }
     .landing-page__piskel-app h2 {
       margin-bottom: 20px;
       font-size: 25px; }
+      @media screen and (max-width: 480px) {
+        .landing-page__piskel-app h2 {
+          text-align: center; } }
     .landing-page__piskel-app p {
       font-size: 20px; }
     .landing-page__piskel-app button {
@@ -444,6 +455,9 @@
     .landing-page__piskel-app img {
       width: 900px;
       margin: auto; }
+      @media screen and (max-width: 480px) {
+        .landing-page__piskel-app img {
+          display: none; } }
   .landing-page__animation-example {
     display: flex;
     align-items: center;
@@ -452,6 +466,17 @@
     text-transform: uppercase;
     background: #686b70;
     color: #e1e6e2; }
+    @media screen and (max-width: 480px) {
+      .landing-page__animation-example {
+        height: inherit;
+        padding: 4vh; } }
+    .landing-page__animation-example .animations {
+      display: grid;
+      grid-template: 1fr/repeat(6, 1fr);
+      grid-gap: 40px; }
+      @media screen and (max-width: 480px) {
+        .landing-page__animation-example .animations {
+          grid-template: 50px repeat(4, 1fr)/1fr; } }
     .landing-page__animation-example h2 {
       width: 120px;
       text-align: right;
@@ -464,6 +489,9 @@
       width: 600px;
       height: 100px;
       margin: auto; }
+      @media screen and (max-width: 480px) {
+        .landing-page__functionality li {
+          width: 80vw; } }
     .landing-page__functionality i {
       grid-area: 1 / 1 / -1 / 2;
       display: flex;
@@ -479,6 +507,9 @@
     .landing-page__about-author div {
       margin: auto;
       width: 500px; }
+      @media screen and (max-width: 480px) {
+        .landing-page__about-author div {
+          width: 90vw; } }
     .landing-page__about-author h2 {
       text-transform: uppercase;
       margin: 20px 0; }
@@ -518,7 +549,7 @@
       .landing-page__footer a:hover {
         color: #d6b87c; }
 
-.back-to-landing-page-button {
+.back-to-landing-page-button__piskel-app {
   cursor: pointer;
   position: absolute;
   left: 25px;
@@ -528,13 +559,8 @@
   background: #acc7cd;
   color: #3f4249;
   border: 2px solid #3f4249; }
-  .back-to-landing-page-button:hover {
+  .back-to-landing-page-button__piskel-app:hover {
     background: #e3decb; }
-
-.animations {
-  display: grid;
-  grid-template: 1fr/repeat(6, 1fr);
-  grid-gap: 40px; }
 
 .user-session-button {
   position: absolute;
@@ -566,11 +592,35 @@
   border-radius: 10px;
   color: #3f4249; }
 
+.mobile-screen {
+  position: relative;
+  display: none;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: #acc7cd;
+  font-size: 5vh;
+  padding: 5vh; }
+  .mobile-screen .back-to-landing-page-button__mobile {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+    color: #3f4249;
+    border: 2px solid #3f4249;
+    background: #d6b87c; }
+
+html {
+  overflow-x: hidden; }
+
 body {
   height: 100vh;
   margin: 0;
   font-family: 'Nunito', Helvetica, sans-serif;
-  color: #3f4249; }
+  color: #3f4249;
+  overflow-x: hidden; }
 
 .wrapper {
   display: grid;
@@ -589,6 +639,9 @@ body {
     justify-content: flex-end;
     align-items: center;
     padding: 0 30px; }
+    @media screen and (max-width: 480px) {
+      .header__navigation-auth {
+        display: none; } }
   .header .header__sing-in-button, .header .header__sing-out-button {
     width: 100px;
     height: 35px;
@@ -609,7 +662,8 @@ h1 {
   display: flex;
   align-items: center;
   text-transform: uppercase;
-  color: #e1e6e2; }
+  color: #e1e6e2;
+  font-size: 3vh; }
 
 h2, h3, p {
   margin: 0; }

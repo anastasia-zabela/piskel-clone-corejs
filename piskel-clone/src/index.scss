@@ -9,12 +9,18 @@
 @import './screens/authorization/auth.scss';
 @import './screens/landing-page/landing-page.scss';
 @import './screens/user-session/session.scss';
+@import './screens/mobileMode/mobileMode.scss';
+
+html {
+    overflow-x: hidden;
+}
 
 body {
     height: 100vh;
     margin: 0;
     font-family: 'Nunito', Helvetica, sans-serif;
     color: #3f4249;
+    overflow-x: hidden;
 }
 
 .wrapper {
@@ -36,6 +42,10 @@ body {
         justify-content: flex-end;
         align-items: center;
         padding: 0 30px;
+
+        @media screen and (max-width: 480px) {
+            display: none;
+        }
     }
 
     %auth-button {
@@ -70,6 +80,7 @@ h1 {
     align-items: center;
     text-transform: uppercase;
     color: #e1e6e2;
+    font-size: 3vh;
 }
 
 h2, h3, p {

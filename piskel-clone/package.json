@@ -21,7 +21,9 @@
   ],
   "jest": {
     "collectCoverage": true,
-    "collectCoverageFrom": ["src/.{js,jsx}"]
+    "collectCoverageFrom": [
+      "src/.{js,jsx}"
+    ]
   },
   "author": "anastasia-zabela zabela113@mail.ru",
   "license": "ISC",

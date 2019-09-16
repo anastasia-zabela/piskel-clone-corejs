@@ -25,6 +25,7 @@ class Storage {
     this.display = {
       landing: 'none',
       app: 'none',
+      mobile: 'none',
     };
   }
 }

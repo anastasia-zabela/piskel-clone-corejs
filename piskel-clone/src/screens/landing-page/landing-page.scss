@@ -7,15 +7,29 @@
         height: 600px;
         background: #acc7cd;
 
+        
+
         & div {
             width: 400px;
             height: 300px;
             margin: auto;
+            
+            @media screen and (max-width: 480px) {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100vw;
+            }
         }
 
         & h2 {
             margin-bottom: 20px;
             font-size: 25px;
+
+            @media screen and (max-width: 480px) {
+                text-align: center;
+            }
         }
 
         & p {
@@ -40,6 +54,10 @@
         & img {
             width: 900px;
             margin: auto;
+
+            @media screen and (max-width: 480px) {
+                display: none;
+            }
         }
     }
 
@@ -51,6 +69,21 @@
         text-transform: uppercase;
         background: #686b70;
         color: #e1e6e2;
+
+        @media screen and (max-width: 480px) {
+            height: inherit;
+            padding: 4vh;
+        }
+
+        & .animations {
+            display: grid;
+            grid-template: 1fr / repeat(6, 1fr);
+            grid-gap: 40px;
+
+            @media screen and (max-width: 480px) {
+                grid-template: 50px repeat(4, 1fr) / 1fr;
+            }
+        }
 
         & h2 {
             width: 120px;
@@ -68,6 +101,10 @@
             width: 600px;
             height: 100px;
             margin: auto;
+
+            @media screen and (max-width: 480px) {
+                width: 80vw;
+            }
         }
 
         & i {
@@ -91,6 +128,10 @@
         & div {
             margin: auto;
             width: 500px;
+
+            @media screen and (max-width: 480px) {
+                width: 90vw;
+            }
         }
 
         & h2 {
@@ -151,7 +192,7 @@
     }
 }
 
-.back-to-landing-page-button {
+.back-to-landing-page-button__piskel-app {
     cursor: pointer;
     position: absolute;
     left: 25px;
@@ -165,10 +206,4 @@
     &:hover {
         background: #e3decb;
     }
-}
-
-.animations {
-    display: grid;
-    grid-template: 1fr / repeat(6, 1fr);
-    grid-gap: 40px;
 }
